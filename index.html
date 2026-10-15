@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Course Portal | CSE Resources</title>
+    <title>Live Academic Course Portal | CSE Resources</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -36,7 +36,6 @@
             padding-bottom: 50px;
         }
 
-        /* Header Styles */
         header {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             border-bottom: 1px solid var(--border-color);
@@ -75,7 +74,6 @@
             font-size: 1rem;
         }
 
-        /* Search & Navigation */
         .controls-container {
             max-width: 1150px;
             margin: 2rem auto;
@@ -112,77 +110,17 @@
             box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
 
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
-        }
-
-        .tab-btn {
-            background: var(--card-bg);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 10px 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .tab-btn:hover {
-            background: var(--card-hover);
-            color: var(--text-main);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #0284c7, #4f46e5);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-        }
-
-        /* Main Content Grid */
         .main-container {
             max-width: 1150px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        .course-section {
-            margin-bottom: 3rem;
-        }
-
-        .course-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .course-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .course-code {
-            background: rgba(129, 140, 248, 0.15);
-            color: var(--secondary);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .loading-box {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
         }
 
         .grid {
@@ -191,7 +129,6 @@
             gap: 1.2rem;
         }
 
-        /* File Card */
         .file-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -228,8 +165,7 @@
 
         .icon-pdf { color: var(--pdf-color); }
         .icon-ppt { color: var(--ppt-color); }
-        .icon-book { color: var(--book-color); }
-        .icon-ques { color: var(--ques-color); }
+        .icon-file { color: var(--primary); }
 
         .file-info h3 {
             font-size: 1rem;
@@ -245,14 +181,9 @@
             padding: 2px 8px;
             border-radius: 4px;
             font-weight: 500;
-            background: rgba(148, 163, 184, 0.15);
-            color: var(--text-muted);
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
         }
-
-        .tag-mid { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
-        .tag-book { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-        .tag-practice { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-        .tag-ques { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
 
         .file-actions {
             margin-top: auto;
@@ -294,41 +225,30 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.7rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <span class="badge-header"><i class="fa-solid fa-graduation-cap"></i> DIU CSE Portal</span>
-            <h1>Course Study Materials & Hub</h1>
-            <p>Organized Lecture Slides, PDFs, Reference Books, and Previous Questions</p>
+            <span class="badge-header"><i class="fa-solid fa-rotate"></i> Real-Time Google Drive Sync</span>
+            <h1>Live Academic Course Portal</h1>
+            <p>Automatically fetches files directly from your Google Drive folder</p>
         </div>
     </header>
 
     <div class="controls-container">
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" placeholder="Search by topic, week, file name, or course code (e.g., DFD, DFA, Logic Gates, Week 3)...">
-        </div>
-
-        <div class="tabs">
-            <button class="tab-btn active" onclick="filterCourse('all')"><i class="fa-solid fa-border-all"></i> All Courses</button>
-            <button class="tab-btn" onclick="filterCourse('CSE223')"><i class="fa-solid fa-microchip"></i> CSE223 (DLD)</button>
-            <button class="tab-btn" onclick="filterCourse('CSE225')"><i class="fa-solid fa-network-wired"></i> CSE225 (Data Comm)</button>
-            <button class="tab-btn" onclick="filterCourse('CSE227')"><i class="fa-solid fa-sitemap"></i> CSE227 (SAD)</button>
-            <button class="tab-btn" onclick="filterCourse('CSE228')"><i class="fa-solid fa-gears"></i> CSE228 (TOC)</button>
-            <button class="tab-btn" onclick="filterCourse('CSE224')"><i class="fa-solid fa-flask"></i> CSE224 (DLD Lab)</button>
+            <input type="text" id="searchInput" placeholder="Search live files...">
         </div>
     </div>
 
     <div class="main-container" id="coursesContainer">
-        <!-- JS will populate courses here -->
+        <div class="loading-box">
+            <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+            <p style="margin-top: 10px;">Connecting to Google Drive and fetching files...</p>
+        </div>
     </div>
 
     <footer>
@@ -336,172 +256,72 @@
     </footer>
 
     <script>
-        const coursesData = [
-            {
-                code: "CSE223",
-                title: "Digital Logic Design",
-                icon: "fa-microchip",
-                files: [
-                    { name: "Course Outline - CSE223 Digital Logic Design", category: "Outline", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1Jhh00iraUII8-iR782eLc_sjuNz3E8sR/view" },
-                    { name: "Lesson 1 - Q_1 (Number Systems & Basics)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1HjDIJ0FKtFM5tXxzGiTj9zTy7k6Yyc94/view" },
-                    { name: "Lesson 2 - Q_1", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1Z162VyU35Jd_c9OR19lpL84gNc2vADJB/view" },
-                    { name: "Logic Gates", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/17d3a14ySl8O44wFZQC49ZnUqDO8fUrbL/view" },
-                    { name: "Universal Gate", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1JmdeEC1T_mIaGAnck0VmSSZ7hoRyR18Q/view" },
-                    { name: "Lesson 06 Presentation", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1uRGK8Z3MERlk9OOA5vpw7_a5Oigz605Z/view" },
-                    { name: "Lesson 07: Canonical Forms of Boolean Functions", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1ETgbAHD7VE8QmupsqbvihXGUlGbPxlGA/view" },
-                    { name: "Quiz Question (Q_1)", category: "Quiz", type: "Image", icon: "fa-file-image icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1TuWxfc4k0GVrDT_CzmFWwFscv61bl0Uv/view" },
-                    { name: "Previous Mid Question Set 1", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1B8NO3F6cZX0LRsAaoETjmGBKax7ukq74/view" },
-                    { name: "Previous Mid Question Set 2", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1HtPklv4fBQ2_PrLYsWw_m2MAvIfOAPFp/view" },
-                    { name: "Previous Mid Question Set 3", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1mcGe4pF4eVBI39KIYiLDMrw3YYdChSLV/view" },
-                    { name: "Previous Mid Question Set 4", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1uujgAUTvjlV7fAFKagVHJVeB7L6Poc_f/view" }
-                ]
-            },
-            {
-                code: "CSE225",
-                title: "Data Communication",
-                icon: "fa-network-wired",
-                files: [
-                    { name: "Week 1: Session 1 - Data and Information", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1UJCdQFH2KclbPilEraJWxbl4zjl2c86x/view" },
-                    { name: "Week 1: Data Representation", category: "Mid Term", type: "PPT", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/115apq4UGfWwcXw2Nxo3-9hruKDUXvg5v/view" },
-                    { name: "Week 1: Lesson 1 - Overview of Data Comm.", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1sDPSsYydr42K75QkowtbQd6wTyPjKglO/view" },
-                    { name: "Week 2: Lesson 1 - Layered Architecture", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/19rHUsUQm6sfufbnxxyUCY9pAjcthsc7w/view" },
-                    { name: "Week 2: Lesson 2 - Layered Architecture", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1vZCkSy6OoVdbw4iJe4rAOZcHu8VEsr5S/view" },
-                    { name: "Week 3: Lesson 1 - Physical Layer (Analog & Digital)", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1qeIkn-gUDd-ihmKVDjh8C4QXEGDGzdFL/view" },
-                    { name: "Week 3: Lesson 2 - Physical Layer", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/15TH6_qVDUodSmk2fMRxc14z-NWRS5V1k/view" },
-                    { name: "Week 4: Lesson 1 - Digital Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1xl6wzfTL8Id32MzWbzbcPawHRjLBhuQF/view" },
-                    { name: "Week 4: Lesson 2 - Digital Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1lxf2SMbskuSixKwYpIcT1Mx2Y8HoJPgp/view" },
-                    { name: "Week 5: Lesson 1 - Analog Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1NOpt1qEDrjmVb4I1ivCYJKjSEQgX7mHe/view" },
-                    { name: "Week 5: Lesson 2 - Analog to Analog Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1VIQ2ItVWveHGaSJeMQaI_VjoJkPYKKMi/view" },
-                    { name: "Book: Data Communications & Networking (Forouzan 5th Ed)", category: "Reference Book", type: "PDF", icon: "fa-book icon-book", tagClass: "tag-book", url: "https://drive.google.com/file/d/1NIMYVdTndPoa0tvR5uOhl-Q1aIRhGJ2X/view" },
-                    { name: "Book: Data and Computer Communications (Stallings 10th Ed)", category: "Reference Book", type: "PDF", icon: "fa-book icon-book", tagClass: "tag-book", url: "https://drive.google.com/file/d/1oFiTFlVCDPqFvtkwP5_JlsiUL2kHQFpM/view" },
-                    { name: "Previous Mid Question Set 1", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1xzPrdHoTBcjae1WzKKt27oR0YW2TT4t4/view" },
-                    { name: "Previous Mid Question Set 2", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1R8g4wB9Te2eZG0A7ppijhQm4W14T4Kxn/view" },
-                    { name: "Previous Mid Question Set 3", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1Q95tOTD5sG0W7UuuBj939ZPHlMnM_X8B/view" },
-                    { name: "Previous Mid Question Set 4", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1mMtfH4wqlIcVgAxxiFwOuAvHEcj0s5Y2/view" }
-                ]
-            },
-            {
-                code: "CSE227",
-                title: "Systems Analysis and Design",
-                icon: "fa-sitemap",
-                files: [
-                    { name: "Week 1: Data and Information", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1GPF_MgnsQGrY1QwwGlstgpCNPv9xNWQR/view" },
-                    { name: "Week 2: System Analysis and Design Life Cycle (SDLC)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/18b79Ne6ESrqm3kIHbO6hZXMTlwLCH5hR/view" },
-                    { name: "Week 3: Information Gathering", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1Mea1L4aYmmtQ0Jvy2Iby21zP9qEoN8UC/view" },
-                    { name: "Week 4: Data Flow Diagram (DFD)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/10exjUI5n7M_Ad9xVzE4TW5u-oi0JxlKX/view" },
-                    { name: "Chapter 5 Lecture Notes", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1UESOlYK5za0pqQjTWSbx41tOlsBWuy3Q/view" },
-                    { name: "Week 6: Feasibility Analysis", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1nTxh2f6xzpgF21g4tRGce-LQ6q-TS9dW/view" },
-                    { name: "DFD Practice Sheet", category: "Practice PDF", type: "PDF", icon: "fa-pen-to-square icon-ppt", tagClass: "tag-practice", url: "https://drive.google.com/file/d/1RzlkGI_mxJlc0nGBqFeFnq183KPHVASf/view" },
-                    { name: "Practice Example - Process Specification", category: "Practice PDF", type: "PDF", icon: "fa-pen-to-square icon-ppt", tagClass: "tag-practice", url: "https://drive.google.com/file/d/1AiAjAXXO8vfnjfTwpdI5TnF4wUv5Miqf/view" },
-                    { name: "Previous Mid Questions (Compiled)", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1rtN4qAZ-O5TnQ66ze-TVKRTINGTsgzyc/view" }
-                ]
-            },
-            {
-                code: "CSE228",
-                title: "Theory of Computation",
-                icon: "fa-gears",
-                files: [
-                    { name: "Lesson 1: Interactive Professional (PDF Version)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1mmu4fGczcBY5JiFXiqior-iGwEXBlmpL/view" },
-                    { name: "Lesson 1: Interactive Professional (Slide Version)", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1fOALu-6K0_BBFjvBMYF_kAP953sQrRCt/view" },
-                    { name: "Finite Automata (DFA) - Subarna Akter Liza", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1Gi7zcQVb0P499yMtrY7dybHUlVmxNHdl/view" },
-                    { name: "DFA Practice Sheet", category: "Practice PDF", type: "PDF", icon: "fa-pen-to-square icon-ppt", tagClass: "tag-practice", url: "https://drive.google.com/file/d/1MoushzYcCFC1MAwKvO71euqxTUW3YLKo/view" },
-                    { name: "Book: Introduction to Automata Theory (Hopcroft, 2006)", category: "Reference Book", type: "PDF", icon: "fa-book icon-book", tagClass: "tag-book", url: "https://drive.google.com/file/d/1p-VjZ4u9kEB08aHeVvTkOXYRGDc8BDUo/view" },
-                    { name: "Book: Hopcroft, Motwani, Ullman (2001 Edition)", category: "Reference Book", type: "PDF", icon: "fa-book icon-book", tagClass: "tag-book", url: "https://drive.google.com/file/d/1b99KvGwxR-UNO7KYQQM2HrnrVWlVZwkD/view" },
-                    { name: "Previous Mid Question Set 1", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1QEv7yCKJdG1KoDMu1_T1EK4CwFNW2aAY/view" },
-                    { name: "Previous Mid Question Set 2", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1jx5YT3hjILfIVW1Iga23WJO_XWMTyvqp/view" },
-                    { name: "Previous Mid Question Set 3", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1pI5lx9epUu51FOwZVbXybsuNCDWhF5zr/view" },
-                    { name: "Previous Mid Question Set 4", category: "Ex Mid Question", type: "PDF", icon: "fa-file-lines icon-ques", tagClass: "tag-ques", url: "https://drive.google.com/file/d/1r_HcMdw5sOsQ8qqMv9gPX115GPy5va0u/view" }
-                ]
-            },
-            {
-                code: "CSE224",
-                title: "Digital Logic Design Lab",
-                icon: "fa-flask",
-                files: [
-                    { name: "CSE224 Official Lab Manual", category: "Lab Manual", type: "PDF", icon: "fa-book-open icon-book", tagClass: "tag-book", url: "https://drive.google.com/file/d/1rMU-7GjmZ_qr43X8boDQF-C-4CMmoGVO/view" },
-                    { name: "Full Lab Report (Experiments 1 - 8)", category: "Lab Report", type: "PDF", icon: "fa-file-pdf icon-pdf", tagClass: "tag-mid", url: "https://drive.google.com/file/d/1psKUpRnYjaZZ9RdWPpv2t4xm-AcdfYDJ/view" }
-                ]
-            }
-        ];
+        // আপনার গুগল ড্রাইভ ফোল্ডারের আইডি
+        const FOLDER_ID = '1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A';
+        // এখানে আপনার Google Cloud Console থেকে প্রাপ্ত API Key বসাতে হবে
+        const API_KEY = 'YOUR_GOOGLE_DRIVE_API_KEY'; 
 
-        let currentFilter = 'all';
-
-        function renderCourses(searchQuery = '') {
-            const container = document.getElementById('coursesContainer');
-            container.innerHTML = '';
-
-            coursesData.forEach(course => {
-                if (currentFilter !== 'all' && course.code !== currentFilter) return;
-
-                const filteredFiles = course.files.filter(file => 
-                    file.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    file.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    course.code.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-
-                if (filteredFiles.length === 0) return;
-
-                const section = document.createElement('div');
-                section.className = 'course-section';
-
-                let cardsHTML = '';
-                filteredFiles.forEach(file => {
-                    cardsHTML += `
-                        <div class="file-card">
-                            <div class="file-top">
-                                <div class="file-icon">
-                                    <i class="fa-solid ${file.icon}"></i>
-                                </div>
-                                <div class="file-info">
-                                    <h3>${file.name}</h3>
-                                    <span class="category-tag ${file.tagClass}">${file.category}</span>
-                                </div>
-                            </div>
-                            <div class="file-actions">
-                                <span class="file-type-label"><i class="fa-regular fa-file"></i> ${file.type} Document</span>
-                                <a href="${file.url}" target="_blank" class="open-btn">
-                                    Open File <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                section.innerHTML = `
-                    <div class="course-header">
-                        <div class="course-title">
-                            <i class="fa-solid ${course.icon}" style="color: var(--primary);"></i>
-                            ${course.title}
-                        </div>
-                        <span class="course-code">${course.code} (${filteredFiles.length} Files)</span>
-                    </div>
-                    <div class="grid">
-                        ${cardsHTML}
+        async function fetchDriveFiles() {
+            if (API_KEY === 'YOUR_GOOGLE_DRIVE_API_KEY') {
+                document.getElementById('coursesContainer').innerHTML = `
+                    <div style="text-align:center; padding: 3rem; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-triangle-exclamation fa-2x" style="color: #f59e0b; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.5rem;">API Key Required for Real-Time Sync</h3>
+                        <p style="color: var(--text-muted);">Google Drive API ব্যবহার করতে কোডের ভেতরে আপনার জেনারেট করা API Key বসাতে হবে। অথবা গুগল শিট (Google Sheets) পদ্ধতি ব্যবহার করতে পারেন যা সবচেয়ে সহজ ও ঝামেলাহীন!</p>
                     </div>
                 `;
+                return;
+            }
 
-                container.appendChild(section);
-            });
-
-            if (container.innerHTML === '') {
-                container.innerHTML = `<p style="text-align:center; color: var(--text-muted); padding: 2rem;">No matching files found for "${searchQuery}".</p>`;
+            const url = `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id,name,mimeType,webViewLink)`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if(data.files) {
+                    renderFiles(data.files);
+                } else {
+                    document.getElementById('coursesContainer').innerHTML = `<p style="text-align:center; color: var(--text-muted);">No files found or check folder permissions ("Anyone with the link can view").</p>`;
+                }
+            } catch (error) {
+                console.error('Error fetching drive files:', error);
             }
         }
 
-        function filterCourse(code) {
-            currentFilter = code;
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            renderCourses(document.getElementById('searchInput').value);
+        function renderFiles(files) {
+            const container = document.getElementById('coursesContainer');
+            let cardsHTML = '';
+
+            files.forEach(file => {
+                let icon = "fa-file icon-file";
+                let type = "Document";
+                if(file.mimeType.includes('pdf')) { icon = "fa-file-pdf icon-pdf"; type = "PDF"; }
+                else if(file.mimeType.includes('presentation')) { icon = "fa-file-powerpoint icon-ppt"; type = "Presentation"; }
+
+                cardsHTML += `
+                    <div class="file-card">
+                        <div class="file-top">
+                            <div class="file-icon"><i class="fa-solid ${icon}"></i></div>
+                            <div class="file-info">
+                                <h3>${file.name}</h3>
+                                <span class="category-tag">Google Drive Live</span>
+                            </div>
+                        </div>
+                        <div class="file-actions">
+                            <span class="file-type-label"><i class="fa-regular fa-file"></i> ${type}</span>
+                            <a href="${file.webViewLink}" target="_blank" class="open-btn">
+                                Open File <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `<div class="grid">${cardsHTML}</div>`;
         }
 
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            renderCourses(e.target.value);
-        });
-
-        // Initial Render
-        renderCourses();
+        fetchDriveFiles();
     </script>
 </body>
 </html>
