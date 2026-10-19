@@ -1,637 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fall 26 | 68_F Live Course Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>DIU CSE 68_F | Academic Resource Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --card-hover: #334155;
-            --primary: #38bdf8;
-            --secondary: #818cf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --pdf-color: #ef4444;
-            --ppt-color: #f97316;
-            --book-color: #10b981;
-            --ques-color: #a855f7;
+        :root[data-theme="dark"] {
+            --bg-body: #090d16;
+            --bg-sidebar: #0f1523;
+            --bg-surface: #131b2e;
+            --bg-surface-hover: #1a243d;
+            --bg-elevated: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-focus: #6366f1;
+            --accent-primary: #6366f1;
+            --accent-primary-hover: #4f46e5;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-purple: #a855f7;
+            --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        :root[data-theme="light"] {
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-surface: #ffffff;
+            --bg-surface-hover: #f8fafc;
+            --bg-elevated: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-subtle: #e2e8f0;
+            --border-focus: #4f46e5;
+            --accent-primary: #4f46e5;
+            --accent-primary-hover: #4338ca;
+            --accent-emerald: #059669;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
+            --accent-purple: #9333ea;
+            --shadow-card: 0 4px 20px -5px rgba(15, 23, 42, 0.08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 50px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-bottom: 1px solid var(--border-color);
-            padding: 2.2rem 1.5rem;
-            text-align: center;
-        }
-
-        .header-content {
-            max-width: 1150px;
-            margin: 0 auto;
-        }
-
-        .badge-header {
-            background: rgba(16, 185, 129, 0.15);
-            color: #10b981;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 10px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        header h1 {
-            font-size: 2.1rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: 1.8rem auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Course Tabs */
-        .tabs {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 1.5rem;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
-        .tab-btn {
-            background: var(--card-bg);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 10px 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 270px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-subtle);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 1.5rem 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .brand {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .tab-btn:hover {
-            background: var(--card-hover);
-            color: var(--text-main);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #0284c7, #4f46e5);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-        }
-
-        /* Live Sync Box */
-        .live-sync-panel {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.25rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .live-sync-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 1rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 0 0.75rem 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 1.25rem;
         }
 
-        .live-title {
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-primary), #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+        }
+
+        .brand-text h2 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 700;
+            padding: 0 0.75rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: var(--bg-surface-hover);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--accent-primary);
+            border-color: rgba(99, 102, 241, 0.25);
+        }
+
+        .nav-item-left {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.15rem;
+        }
+
+        .nav-badge {
+            font-size: 0.72rem;
+            background-color: var(--bg-elevated);
+            color: var(--text-secondary);
+            padding: 2px 8px;
+            border-radius: 20px;
             font-weight: 700;
         }
 
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px #10b981;
+        .nav-item.active .nav-badge {
+            background-color: var(--accent-primary);
+            color: #fff;
         }
 
-        .subfolder-bar {
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .developer-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .developer-card p {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+
+        /* Main Workspace */
+        .main-wrapper {
+            flex: 1;
+            margin-left: 270px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1rem;
+            flex-direction: column;
+            min-width: 0;
         }
 
-        .sub-btn {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 6px 13px;
+        /* Topbar */
+        .topbar {
+            height: 72px;
+            background-color: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            gap: 1rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 8px 12px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 0.83rem;
-            font-weight: 500;
-            transition: all 0.2s;
+            font-size: 1.1rem;
         }
 
-        .sub-btn:hover, .sub-btn.active {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .view-controls {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .drive-iframe-wrap {
-            background: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            height: 360px;
-        }
-
-        .drive-iframe-wrap iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Search Box */
-        .search-box {
+        .search-wrapper {
             position: relative;
-            margin-bottom: 1.8rem;
+            flex: 1;
+            max-width: 520px;
         }
 
-        .search-box i {
+        .search-wrapper i {
             position: absolute;
-            left: 18px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        .search-box input {
+        .search-wrapper input {
             width: 100%;
-            padding: 14px 20px 14px 48px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            color: var(--text-main);
-            font-size: 1rem;
+            padding: 10px 16px 10px 42px;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 0.88rem;
             outline: none;
+            transition: all 0.2s ease;
         }
 
-        .search-box input:focus {
-            border-color: var(--primary);
+        .search-wrapper input:focus {
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
         }
 
-        /* Course Grid */
-        .course-section {
-            margin-bottom: 2.8rem;
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .course-header {
+        .icon-btn {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            height: 40px;
+            padding: 0 14px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--accent-primary);
+            background-color: var(--bg-surface-hover);
+        }
+
+        /* Content Area */
+        .content {
+            padding: 2rem;
+            max-width: 1350px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Executive Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .stat-info h4 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .stat-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Filter Pills */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pill:hover {
+            color: var(--text-primary);
+            border-color: var(--text-muted);
+        }
+
+        .pill.active {
+            background-color: var(--accent-primary);
+            color: #fff;
+            border-color: var(--accent-primary);
+        }
+
+        /* Course Section */
+        .course-block {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .course-block-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .course-title {
-            font-size: 1.3rem;
+        .course-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .course-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+        }
+
+        .course-meta h3 {
+            font-size: 1.18rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .course-code {
-            background: rgba(129, 140, 248, 0.15);
-            color: var(--secondary);
-            padding: 4px 10px;
+        .course-meta span.code-badge {
+            font-size: 0.75rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-primary);
+            padding: 3px 9px;
             border-radius: 6px;
-            font-size: 0.82rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 1.1rem;
+        .course-meta p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
         }
 
-        .file-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.2rem;
+        .course-header-actions {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-        }
-
-        .file-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-
-        .file-top {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 1rem;
-        }
-
-        .file-icon {
-            font-size: 1.6rem;
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .icon-pdf { color: var(--pdf-color); }
-        .icon-ppt { color: var(--ppt-color); }
-        .icon-book { color: var(--book-color); }
-        .icon-ques { color: var(--ques-color); }
-
-        .file-info h3 {
-            font-size: 0.96rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .category-tag {
-            display: inline-block;
-            font-size: 0.73rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(56, 189, 248, 0.15);
-            color: #38bdf8;
-        }
-
-        .file-actions {
-            padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .file-type-label {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-        }
-
-        .open-btn {
-            background: rgba(56, 189, 248, 0.12);
-            color: var(--primary);
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .open-btn:hover {
-            background: var(--primary);
-            color: #0f172a;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-content">
-            <span class="badge-header"><i class="fa-solid fa-bolt"></i> Real-Time Drive Sync Active (No API Key Needed)</span>
-            <h1>Fall 26 | Section 68_F Study Portal</h1>
-            <p>Live Google Drive Folders + Quick Searchable Study Materials</p>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Course Filter Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="selectCourse('all', this)"><i class="fa-solid fa-layer-group"></i> All Courses</button>
-            <button class="tab-btn" onclick="selectCourse('CSE223', this)"><i class="fa-solid fa-microchip"></i> CSE223 (DLD)</button>
-            <button class="tab-btn" onclick="selectCourse('CSE225', this)"><i class="fa-solid fa-network-wired"></i> CSE225 (Data Comm)</button>
-            <button class="tab-btn" onclick="selectCourse('CSE227', this)"><i class="fa-solid fa-sitemap"></i> CSE227 (SAD)</button>
-            <button class="tab-btn" onclick="selectCourse('CSE228', this)"><i class="fa-solid fa-gears"></i> CSE228 (TOC)</button>
-            <button class="tab-btn" onclick="selectCourse('CSE224', this)"><i class="fa-solid fa-flask"></i> CSE224 (DLD Lab)</button>
-        </div>
-
-        <!-- Real-Time Google Drive Folder Embed -->
-        <div class="live-sync-panel">
-            <div class="live-sync-header">
-                <div class="live-title">
-                    <span class="pulse-dot"></span>
-                    <span id="liveFolderTitle">Live Google Drive Folder (Real-Time Auto Update)</span>
-                </div>
-                <div class="view-controls">
-                    <button class="sub-btn active" id="listBtn" onclick="setViewMode('list')"><i class="fa-solid fa-list"></i> List</button>
-                    <button class="sub-btn" id="gridBtn" onclick="setViewMode('grid')"><i class="fa-solid fa-grip"></i> Grid</button>
-                    <a id="directDriveLink" href="https://drive.google.com/drive/folders/1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A" target="_blank" class="open-btn">
-                        Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Subfolder Buttons -->
-            <div class="subfolder-bar" id="subfolderBar"></div>
-
-            <!-- Live Drive Iframe -->
-            <div class="drive-iframe-wrap">
-                <iframe id="driveFrame" src="https://drive.google.com/embeddedfolderview?id=1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A#list"></iframe>
-            </div>
-        </div>
-
-        <!-- Search Bar for Quick Cards -->
-        <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" placeholder="Quick search indexed files (e.g., DFD, DFA, Logic Gates, Forouzan, Week 3)...">
-        </div>
-
-        <!-- Indexed File Cards -->
-        <div id="coursesContainer"></div>
-    </div>
-
-    <footer>
-        <p>Built for Parves Hasan | Department of CSE, Daffodil International University</p>
-    </footer>
-
-    <script>
-        const folderMap = {
-            all: [
-                { label: "Main Root Folder (All Courses)", id: "1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A" },
-                { label: "CSE223 Folder", id: "1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ" },
-                { label: "CSE225 Folder", id: "14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I" },
-                { label: "CSE227 Folder", id: "1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq" },
-                { label: "CSE228 Folder", id: "19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK" },
-                { label: "CSE224 Lab Folder", id: "1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO" }
-            ],
-            CSE223: [
-                { label: "CSE223 Main", id: "1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ" },
-                { label: "Mid Term", id: "1POdeQlm16Rbqh5PHXAQaDRmd_mb0El1i" },
-                { label: "Final Term", id: "1T64gFJERrzUlWUoLtkrnAHBwbRm0TSei" },
-                { label: "Quiz Questions", id: "11FdWi-vlznmkvojBtg7SDksbcrviG4VC" },
-                { label: "Ex Mid Questions", id: "1mMqV43gB4PGZKlwYXDiwyzWAxuLsdCue" }
-            ],
-            CSE225: [
-                { label: "CSE225 Main", id: "14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I" },
-                { label: "Mid Term", id: "1GsYzrj3RdJCo_mgPgkCSu-0y3hZ4QbGI" },
-                { label: "Week 1", id: "18GZP4IzqGUC9kGm7hN571v-vcBlP_eke" },
-                { label: "Week 2", id: "1eyOOeYHdhz3NtueguHKLuA8OCfHXw22p" },
-                { label: "Week 3", id: "14Km5LyrskpfDnD5KrBiC1ND_QFrLJ6qi" },
-                { label: "Week 4", id: "1wZAjOKNANTTrgRKmNKZ7W_f0BTCpAzxJ" },
-                { label: "Week 5", id: "1O-JtqczZxB6VaWkGoL51x5M-OSUhI69M" },
-                { label: "Final Term", id: "1bjRSBAZnp7YNJwenXcGiRIMAgqGEYKIE" },
-                { label: "Reference Books", id: "1MG0G88nbKQkDnFRbZ9dpX-OtJYKr1uvQ" },
-                { label: "Ex Mid Questions", id: "1bGznroKUgxXhKb6HxwFzoaJTlCUOaJ58" }
-            ],
-            CSE227: [
-                { label: "CSE227 Main", id: "1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq" },
-                { label: "Mid Term", id: "16vwwH4ki1Gp9ypXiqS7huw_5PMbidb3d" },
-                { label: "Final Term", id: "19ofes9iGEBusEYCVt1Ho6vXdS3r_dgBd" },
-                { label: "Practice PDF", id: "1DnD_X16QhQuTLacRNOIg4fMIKRRYzkz1" },
-                { label: "Quiz Questions", id: "1vu177W6ZPIciIJvGaj2ACePmpDOOs0H4" },
-                { label: "Ex Mid Questions", id: "1iMlwkpePjXhAY5apjgRxwskFiQe977wi" }
-            ],
-            CSE228: [
-                { label: "CSE228 Main", id: "19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK" },
-                { label: "Mid Term", id: "1FRlUQBgEu0wCKmNXXCI7irUBn7sY9GvU" },
-                { label: "Final Term", id: "1r7YNdBXaLzeK1t6P8vya4gNIANJZARS7" },
-                { label: "Reference Books", id: "1GFYzvsjLk9CfZJa3dfLDjVFmV0QVcVl5" },
-                { label: "Ex Mid Questions", id: "118j4-Z8cByfQBFNt4G7-HmwKUJPFpbK0" }
-            ],
-            CSE224: [
-                { label: "CSE224 Lab Folder", id: "1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO" }
-            ]
-        };
-
-        const coursesData = [
-            {
-                code: "CSE223",
-                title: "Digital Logic Design",
-                icon: "fa-microchip",
-                files: [
-                    { name: "Course Outline - CSE223 Digital Logic Design", category: "Outline", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1Jhh00iraUII8-iR782eLc_sjuNz3E8sR/view" },
-                    { name: "Lesson 1 - Q_1 (Number Systems & Basics)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1HjDIJ0FKtFM5tXxzGiTj9zTy7k6Yyc94/view" },
-                    { name: "Lesson 2 - Q_1", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1Z162VyU35Jd_c9OR19lpL84gNc2vADJB/view" },
-                    { name: "Logic Gates", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/17d3a14ySl8O44wFZQC49ZnUqDO8fUrbL/view" },
-                    { name: "Universal Gate", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1JmdeEC1T_mIaGAnck0VmSSZ7hoRyR18Q/view" },
-                    { name: "Lesson 06 Presentation", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1uRGK8Z3MERlk9OOA5vpw7_a5Oigz605Z/view" },
-                    { name: "Lesson 07: Canonical Forms of Boolean Functions", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1ETgbAHD7VE8QmupsqbvihXGUlGbPxlGA/view" }
-                ]
-            },
-            {
-                code: "CSE225",
-                title: "Data Communication",
-                icon: "fa-network-wired",
-                files: [
-                    { name: "Week 1: Session 1 - Data and Information", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1UJCdQFH2KclbPilEraJWxbl4zjl2c86x/view" },
-                    { name: "Week 1: Lesson 1 - Overview of Data Comm.", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1sDPSsYydr42K75QkowtbQd6wTyPjKglO/view" },
-                    { name: "Week 2: Lesson 1 & 2 - Layered Architecture", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/19rHUsUQm6sfufbnxxyUCY9pAjcthsc7w/view" },
-                    { name: "Week 3: Physical Layer (Analog & Digital)", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1qeIkn-gUDd-ihmKVDjh8C4QXEGDGzdFL/view" },
-                    { name: "Week 4: Digital Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1xl6wzfTL8Id32MzWbzbcPawHRjLBhuQF/view" },
-                    { name: "Week 5: Analog Transmission", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1NOpt1qEDrjmVb4I1ivCYJKjSEQgX7mHe/view" },
-                    { name: "Book: Data Communications & Networking (Forouzan)", category: "Book", type: "PDF", icon: "fa-book icon-book", url: "https://drive.google.com/file/d/1NIMYVdTndPoa0tvR5uOhl-Q1aIRhGJ2X/view" },
-                    { name: "Book: Data & Computer Communications (Stallings)", category: "Book", type: "PDF", icon: "fa-book icon-book", url: "https://drive.google.com/file/d/1oFiTFlVCDPqFvtkwP5_JlsiUL2kHQFpM/view" }
-                ]
-            },
-            {
-                code: "CSE227",
-                title: "Systems Analysis and Design",
-                icon: "fa-sitemap",
-                files: [
-                    { name: "Week 1: Data and Information", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1GPF_MgnsQGrY1QwwGlstgpCNPv9xNWQR/view" },
-                    { name: "Week 2: System Analysis & Design Life Cycle", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/18b79Ne6ESrqm3kIHbO6hZXMTlwLCH5hR/view" },
-                    { name: "Week 3: Information Gathering", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1Mea1L4aYmmtQ0Jvy2Iby21zP9qEoN8UC/view" },
-                    { name: "Week 4: Data Flow Diagram (DFD)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/10exjUI5n7M_Ad9xVzE4TW5u-oi0JxlKX/view" },
-                    { name: "Chapter 5 Lecture Notes", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1UESOlYK5za0pqQjTWSbx41tOlsBWuy3Q/view" },
-                    { name: "Week 6: Feasibility Analysis", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1nTxh2f6xzpgF21g4tRGce-LQ6q-TS9dW/view" },
-                    { name: "DFD Practice Sheet", category: "Practice", type: "PDF", icon: "fa-pen-to-square icon-ppt", url: "https://drive.google.com/file/d/1RzlkGI_mxJlc0nGBqFeFnq183KPHVASf/view" }
-                ]
-            },
-            {
-                code: "CSE228",
-                title: "Theory of Computation",
-                icon: "fa-gears",
-                files: [
-                    { name: "Lesson 1: Interactive Professional (PDF)", category: "Mid Term", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1mmu4fGczcBY5JiFXiqior-iGwEXBlmpL/view" },
-                    { name: "Finite Automata (DFA) - Subarna Akter Liza", category: "Mid Term", type: "PPTX", icon: "fa-file-powerpoint icon-ppt", url: "https://drive.google.com/file/d/1Gi7zcQVb0P499yMtrY7dybHUlVmxNHdl/view" },
-                    { name: "DFA Practice Sheet", category: "Practice", type: "PDF", icon: "fa-pen-to-square icon-ppt", url: "https://drive.google.com/file/d/1MoushzYcCFC1MAwKvO71euqxTUW3YLKo/view" },
-                    { name: "Book: Introduction to Automata Theory (Hopcroft)", category: "Book", type: "PDF", icon: "fa-book icon-book", url: "https://drive.google.com/file/d/1p-VjZ4u9kEB08aHeVvTkOXYRGDc8BDUo/view" }
-                ]
-            },
-            {
-                code: "CSE224",
-                title: "Digital Logic Design Lab",
-                icon: "fa-flask",
-                files: [
-                    { name: "CSE224 Official Lab Manual", category: "Lab Manual", type: "PDF", icon: "fa-book-open icon-book", url: "https://drive.google.com/file/d/1rMU-7GjmZ_qr43X8boDQF-C-4CMmoGVO/view" },
-                    { name: "Full Lab Report (Experiments 1 - 8)", category: "Lab Report", type: "PDF", icon: "fa-file-pdf icon-pdf", url: "https://drive.google.com/file/d/1psKUpRnYjaZZ9RdWPpv2t4xm-AcdfYDJ/view" }
-                ]
-            }
-        ];
-
-        let currentCourse = 'all';
-        let currentFolderId = '1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A';
-        let currentViewMode = 'list';
-
-        function updateSubfolderBar(courseKey) {
-            const bar = document.getElementById('subfolderBar');
-            const list = folderMap[courseKey] || folderMap['all'];
-            bar.innerHTML = '';
-
-            list.forEach((item, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'sub-btn' + (index === 0 ? ' active' : '');
-                btn.innerHTML = `<i class="fa-regular fa-folder-open"></i> ${item.label}`;
-                btn.onclick = () => {
-                    document.querySelectorAll('#subfolderBar .sub-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    loadDriveFolder(item.id, item.label);
-                };
-                bar.appendChild(btn);
-            });
-
-            loadDriveFolder(list[0].id, list[0].label);
-        }
-
-        function loadDriveFolder(folderId, label) {
-            currentFolderId = folderId;
-            document.getElementById('liveFolderTitle').innerText = `Live Sync: ${label}`;
-            document.getElementById('driveFrame').src = `https://drive.google.com/embeddedfolderview?id=${folderId}#${currentViewMode}`;
-            document.getElementById('directDriveLink').href = `https://drive.google.com/drive/folders/${folderId}`;
-        }
-
-        function setViewMode(mode) {
-            currentViewMode = mode;
-            document.getElementById('listBtn').classList.toggle('active', mode === 'list');
-            document.getElementById('gridBtn').classList.toggle('active', mode === 'grid');
-            document.getElementById('driveFrame').src = `https://drive.google.com/embeddedfolderview?id=${currentFolderId}#${currentViewMode}`;
-        }
-
-        function selectCourse(courseCode, btnEl) {
-            currentCourse = courseCode;
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            btnEl.classList.add('active');
-            updateSubfolderBar(courseCode);
-            renderCourses(document.getElementById('searchInput').value);
-        }
-
-        function renderCourses(searchQuery = '') {
-            const container = document.getElementById('coursesContainer');
-            container.innerHTML = '';
-
-            coursesData.forEach(course => {
-                if (currentCourse !== 'all' && course.code !== currentCourse) return;
-
-                const filteredFiles = course.files.filter(file =>
-                    file.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    file.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    course.code.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-
-                if (filteredFiles.length === 0) return;
-
-                let cardsHTML = '';
-                filteredFiles.forEach(file => {
-                    cardsHTML += `
-                        <div class="file-card">
-                            <div class="file-top">
-                                <div class="file-icon"><i class="fa-solid ${file.icon}"></i></div>
-                                <div class="file-info">
-                                    <h3>${file.name}</h3>
-                                    <span class="category-tag">${file.category}</span>
-                                </div>
-                            </div>
-                            <div class="file-actions">
-                                <span class="file-type-label"><i class="fa-regular fa-file"></i> ${file.type}</span>
-                                <a href="${file.url}" target="_blank" class="open-btn">
-                                    Open File <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                const section = document.createElement('div');
-                section.className = 'course-section';
-                section.innerHTML = `
-                    <div class="course-header">
-                        <div class="course-title">
-                            <i class="fa-solid ${course.icon}" style="color: var(--primary);"></i>
-                            ${course.title}
-                        </div>
-                        <span class="course-code">${course.code}</span>
-                    </div>
-                    <div class="grid">${cardsHTML}</div>
-                `;
-                container.appendChild(section);
-            });
-        }
-
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            renderCourses(e.target.value);
-        });
-
-        updateSubfolderBar('all');
-        renderCourses();
-    </script>
-</body>
-</html>
+        .zip-btn {
+            background: linear-gradient(135deg, var(--accent
