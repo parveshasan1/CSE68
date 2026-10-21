@@ -7,7 +7,7 @@
 <title>Fall 26 | 68_F Study Portal</title>
 <meta name="description" content="Slides, books, lab manuals and exam questions for Section 68_F, Daffodil International University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{color-scheme:dark;--bg:#0b1120;--surface:#111a2e;--surface-2:#17233b;--line:#22314d;--text:#f1f5f9;--muted:#8fa0bb;--accent:#38bdf8;--accent-2:#818cf8;--accent-ink:#06121f;--glass:rgba(11,17,32,.78);--shadow:0 12px 32px -14px rgba(0,0,0,.7);--pdf:#f87171;--ppt:#fb923c;--book:#34d399;--ques:#c084fc}
@@ -152,6 +152,52 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 @media(max-width:640px){.ov{grid-template-columns:1fr 1fr}.ov .sec-icon{display:none}.fgrid{grid-template-columns:1fr}.grid.list .card{flex-direction:column;align-items:stretch}}
 @media(max-width:640px){.hide-sm{display:none}.hero{padding-top:2.2rem}.frame{height:320px}.stats{gap:1.4rem}.kbd{display:none}.search input{padding-right:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== Premium layer ===== */
+:root{--serif:'Instrument Serif',Georgia,serif}
+:root[data-theme=dark]{--bg:#060a14;--surface:#0d1424;--surface-2:#141d33;--line:rgba(148,163,184,.15);--accent:#7dd3fc;--accent-2:#a5b4fc;--accent-ink:#04101c;--glass:rgba(8,12,24,.7);--shadow:0 24px 50px -28px rgba(0,0,0,.9)}
+:root[data-theme=light]{--bg:#f7f6f2;--surface:#fff;--surface-2:#f1efe8;--line:rgba(15,23,42,.11);--glass:rgba(247,246,242,.78);--shadow:0 22px 44px -28px rgba(30,41,59,.35)}
+html{scroll-padding-top:170px}
+body{background-image:radial-gradient(900px 460px at 12% -4%,color-mix(in srgb,var(--accent-2) 24%,transparent),transparent 62%),radial-gradient(760px 420px at 92% 2%,color-mix(in srgb,var(--accent) 17%,transparent),transparent 62%);background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0,#000,transparent);mask-image:radial-gradient(ellipse 80% 55% at 50% 0,#000,transparent)}
+.nav{top:10px;width:calc(100% - 1.6rem);max-width:1180px;margin:10px auto 0;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.nav .wrap{height:58px;padding:0 12px}
+.sticky{top:76px;border:1px solid var(--line);border-radius:16px;margin:.6rem auto 0;width:calc(100% - 1.6rem);max-width:1180px;padding:.6rem 0;box-shadow:var(--shadow)}
+.logo{border-radius:11px;box-shadow:0 6px 18px -6px var(--accent)}
+.btn{border-radius:11px}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0;color:var(--accent-ink);box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.chip.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
+.hero{padding:4.6rem 0 2.4rem}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,7vw,5rem);line-height:1;letter-spacing:-.02em;max-width:18ch}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.hero p{font-size:1.12rem;max-width:52ch}
+.live{background:color-mix(in srgb,var(--surface) 70%,transparent);backdrop-filter:blur(8px)}
+.hero .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:nth-child(2){animation-delay:.07s}.hero .wrap>*:nth-child(3){animation-delay:.14s}.hero .wrap>*:nth-child(4){animation-delay:.21s}.hero .wrap>*:nth-child(5){animation-delay:.28s}.hero .wrap>*:nth-child(6){animation-delay:.35s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+.stat b{font-family:var(--serif);font-weight:400;font-size:2.5rem;letter-spacing:-.02em}
+.stats{border-top-color:var(--line)}
+.ov button,.card{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 60%,var(--surface)),var(--surface))}
+.ov button{border-color:var(--line)}
+.ov button::after,.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c,var(--accent)) 18%,transparent),transparent 70%)}
+.ov button:hover::after,.card:hover::after{opacity:1}
+.card{padding:1.2rem 1.2rem 1.1rem 1.4rem}
+.card:hover{transform:translateY(-3px)}
+.ficon,.sec-icon{border-radius:12px}
+.sec-icon{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,transparent),color-mix(in srgb,var(--accent-2) 20%,transparent));border:1px solid var(--line)}
+.section{margin:3.2rem 0}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:-.01em}
+.bar h2{font-family:var(--serif);font-weight:400;font-size:2.2rem;letter-spacing:-.01em}
+.code{border:1px solid var(--line);background:color-mix(in srgb,var(--accent-2) 12%,transparent)}
+.feature{border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2) 55%,transparent 90%) border-box;padding:1.7rem 1.8rem;border-radius:20px}
+.feature h2{font-family:var(--serif);font-weight:400;font-size:2rem;letter-spacing:-.01em}
+.feature .sec-icon{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0}
+.panel{border-radius:20px}
+.subw{border-radius:99px}
+.tag{border:1px solid var(--line);background:transparent}
+footer{margin-top:5rem;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--surface) 60%,transparent))}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+@media(max-width:640px){.hero{padding-top:2.6rem}.nav,.sticky{width:calc(100% - 1rem)}.sec-head h2{font-size:1.5rem}.bar h2{font-size:1.7rem}}
 </style>
 </head>
 <body>
@@ -166,7 +212,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 
 <header class="hero" id="top"><div class="wrap">
   <div class="live"><span class="dot"></span> Synced with Google Drive</div>
-  <h1>Fall 26 study materials for Section 68_F</h1>
+  <h1>Fall 26 study materials for <em>Section 68_F</em></h1>
   <p>Slides, books, lab manuals and exam questions for every course, in one searchable place.</p>
   <div class="cta"><a class="btn primary lg" href="#materials"><i class="fa-solid fa-book-open"></i> Browse materials</a><a class="btn lg" href="#drive"><i class="fa-brands fa-google-drive"></i> Open live folders</a></div>
   <div class="ov" id="overview"></div>
@@ -266,6 +312,10 @@ F("Full Lab Report (Experiments 1 - 8)","Lab Report","PDF","pdf","1psKUpRnYjaZZ9
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Optional ZIP files: upload a ZIP to Drive (share: anyone with the link) and paste its link or file ID here.
+const ZIPS={all:"",CSE223:"",CSE225:"",CSE227:"",CSE228:"",CSE224:""};
+const zipId=k=>((ZIPS[k]||'').match(/[-\w]{25,}/)||[])[0];
+const zipGo=id=>{const fr=document.createElement('iframe');fr.style.display='none';fr.src='https://drive.google.com/uc?export=download&id='+id;document.body.appendChild(fr);setTimeout(()=>fr.remove(),90000);toast('ZIP download started')};
 const fmatch=(f,l)=>f.category===l||f.name.startsWith(l)||(l==="Reference Books"&&f.category==="Book")||(l==="Practice PDF"&&f.category==="Practice");
 const state={sub:{},course:'all',type:'all',q:'',view:'list',sort:'def',layout:'cards',folder:folderMap.all[0].id};
 const kindOf=f=>{const c=f.icon.split(' ')[1]||'';return c.replace('icon-','')};
@@ -329,7 +379,7 @@ function render(){
     const sl=(!ql&&state.type==='all')?state.sub[c.code]:'';if(sl)files=files.filter(f=>fmatch(f,sl));
     if(state.sort==='az')files.sort((a,b)=>a.name.localeCompare(b.name));
     if(!files.length&&!sl)return;total+=files.length+(sl?1:0);
-    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download every file in this course"><i class="fa-solid fa-download"></i> <span class="hide-sm">Download course</span></button></div>${subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
+    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download this whole course"><i class="fa-solid ${zipId(c.code)?'fa-file-zipper':'fa-download'}"></i> <span class="hide-sm">${zipId(c.code)?'Download ZIP':'Download course'}</span></button></div>${subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
     files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
   });
   $('count').textContent=total+(total===1?' file':' files');
@@ -346,7 +396,8 @@ function dl(files,label){
     fr.src='https://drive.google.com/uc?export=download&id='+fid(f.url);document.body.appendChild(fr);
     setTimeout(()=>fr.remove(),90000);toast(`Downloading ${i} of ${files.length}`);setTimeout(next,1500)})();
 }
-$('dlAll').onclick=()=>dl(allFiles,'68_F Study Material');
+$('dlAll').onclick=()=>zipId('all')?zipGo(zipId('all')):dl(allFiles,'68_F Study Material');
+if(zipId('all'))$('dlAll').innerHTML='<i class="fa-solid fa-file-zipper"></i> Download ZIP';
 $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
 $('out').onclick=e=>{
   const fo=e.target.closest('[data-fo]');
@@ -357,7 +408,7 @@ $('out').onclick=e=>{
   if(df){const [code,label]=df.dataset.dlf.split('|'),c=coursesData.find(x=>x.code===code),fl=c.files.filter(f=>fmatch(f,label));
     if(fl.length)dl(fl,code+' '+label);else toast('Use Open in Drive to download from this folder');return}
   const one=e.target.closest('[data-dl]');if(one){dl([{url:one.dataset.dl}]);return}
-  const dc=e.target.closest('[data-dlc]');if(dc){const c=coursesData.find(x=>x.code===dc.dataset.dlc);dl(c.files,c.code);return}
+  const dc=e.target.closest('[data-dlc]');if(dc){if(zipId(dc.dataset.dlc)){zipGo(zipId(dc.dataset.dlc));return}const c=coursesData.find(x=>x.code===dc.dataset.dlc);dl(c.files,c.code);return}
   const b=e.target.closest('[data-copy]');if(!b)return;
   (navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(()=>toast('Link copied')).catch(()=>toast('Copy failed, use Open instead'))};
 let tm;$('q').addEventListener('input',e=>{clearTimeout(tm);tm=setTimeout(()=>{state.q=e.target.value;render()},120)});
@@ -369,13 +420,14 @@ $('topBtn').onclick=()=>scrollTo({top:0});
 
 function setTheme(t){document.documentElement.dataset.theme=t;$('theme').innerHTML=`<i class="fa-solid fa-${t==='dark'?'moon':'sun'}"></i>`;try{localStorage.setItem('theme68f',t)}catch(e){}}
 let saved=null;try{saved=localStorage.getItem('theme68f')}catch(e){}
-setTheme(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+setTheme(saved||'dark');
 $('theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
 
 $('sort').onchange=e=>{state.sort=e.target.value;render()};
 [['vCards','cards'],['vList','list']].forEach(([id,l])=>$(id).onclick=()=>{state.layout=l;$('vCards').classList.toggle('on',l==='cards');$('vList').classList.toggle('on',l==='list');render()});
 $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');$('typeSel').onchange=e=>{state.type=e.target.value;render()};
-buildOverview();buildStats();buildRails();buildFolders();render();
+buildOverview();document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card,.ov button');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+buildStats();buildRails();buildFolders();render();
 </script>
 </body>
 </html>
