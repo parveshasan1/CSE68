@@ -376,6 +376,41 @@ $('sort').onchange=e=>{state.sort=e.target.value;render()};
 [['vCards','cards'],['vList','list']].forEach(([id,l])=>$(id).onclick=()=>{state.layout=l;$('vCards').classList.toggle('on',l==='cards');$('vList').classList.toggle('on',l==='list');render()});
 $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');$('typeSel').onchange=e=>{state.type=e.target.value;render()};
 buildOverview();buildStats();buildRails();buildFolders();render();
+
+const DRIVE_API_KEY="AIzaSyAvO28NMn5eW9-w1pLoNEe519Rad-zRy7I";
+async function autoSync(){
+  if(!DRIVE_API_KEY)return;
+  const MT={'application/pdf':['PDF','pdf'],'application/vnd.openxmlformats-officedocument.presentationml.presentation':['PPTX','ppt'],'application/vnd.ms-powerpoint':['PPT','ppt'],'application/vnd.google-apps.presentation':['PPTX','ppt'],'application/vnd.openxmlformats-officedocument.wordprocessingml.document':['DOCX','pdf'],'application/msword':['DOC','pdf'],'application/vnd.google-apps.document':['DOC','pdf']};
+  let added=0;
+  for(const c of coursesData){
+    const l=folderMap[c.code]||[],subs=l.length>1?l.slice(1):l;
+    const known=new Set(c.files.map(f=>fid(f.url)));
+    for(const s of subs){
+      try{
+        let tok='';
+        do{
+          const u='https://www.googleapis.com/drive/v3/files?q='+encodeURIComponent("'"+s.id+"' in parents and trashed=false")+'&fields=nextPageToken,files(id,name,mimeType)&pageSize=1000&key='+DRIVE_API_KEY+(tok?'&pageToken='+tok:'');
+          const r=await fetch(u);if(!r.ok)break;const j=await r.json();
+          (j.files||[]).forEach(x=>{
+            if(x.mimeType==='application/vnd.google-apps.folder'||known.has(x.id))return;
+            const m=MT[x.mimeType]||[(x.name.split('.').pop()||'FILE').toUpperCase().slice(0,5),'pdf'];
+            const ic=/book/i.test(s.label)?'book':/practice/i.test(s.label)?'prac':m[1];
+            c.files.push({name:x.name.replace(/\.[^.]+$/,''),category:s.label,type:m[0],icon:IC[ic],url:'https://drive.google.com/file/d/'+x.id+'/view'});
+            known.add(x.id);added++;
+          });
+          tok=j.nextPageToken||'';
+        }while(tok);
+      }catch(e){}
+    }
+  }
+  if(!added)return;
+  allFiles.length=0;allFiles.push(...coursesData.flatMap(c=>c.files.map(f=>({...f,course:c}))));
+  types.length=0;types.push('all',...new Set(allFiles.map(f=>typeOf(f))));
+  $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');state.type='all';
+  $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
+  buildOverview();buildStats();buildRails();render();
+}
+autoSync();
 </script>
 </body>
 </html>
