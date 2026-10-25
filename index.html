@@ -7,7 +7,7 @@
 <title>Fall 26 | 68_F Study Portal</title>
 <meta name="description" content="Slides, books, lab manuals and exam questions for Section 68_F, Daffodil International University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{color-scheme:dark;--bg:#0b1120;--surface:#111a2e;--surface-2:#17233b;--line:#22314d;--text:#f1f5f9;--muted:#8fa0bb;--accent:#38bdf8;--accent-2:#818cf8;--accent-ink:#06121f;--glass:rgba(11,17,32,.78);--shadow:0 12px 32px -14px rgba(0,0,0,.7);--pdf:#f87171;--ppt:#fb923c;--book:#34d399;--ques:#c084fc}
@@ -152,6 +152,52 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 @media(max-width:640px){.ov{grid-template-columns:1fr 1fr}.ov .sec-icon{display:none}.fgrid{grid-template-columns:1fr}.grid.list .card{flex-direction:column;align-items:stretch}}
 @media(max-width:640px){.hide-sm{display:none}.hero{padding-top:2.2rem}.frame{height:320px}.stats{gap:1.4rem}.kbd{display:none}.search input{padding-right:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== Premium layer ===== */
+:root{--serif:'Instrument Serif',Georgia,serif}
+:root[data-theme=dark]{--bg:#060a14;--surface:#0d1424;--surface-2:#141d33;--line:rgba(148,163,184,.15);--accent:#7dd3fc;--accent-2:#a5b4fc;--accent-ink:#04101c;--glass:rgba(8,12,24,.7);--shadow:0 24px 50px -28px rgba(0,0,0,.9)}
+:root[data-theme=light]{--bg:#f7f6f2;--surface:#fff;--surface-2:#f1efe8;--line:rgba(15,23,42,.11);--glass:rgba(247,246,242,.78);--shadow:0 22px 44px -28px rgba(30,41,59,.35)}
+html{scroll-padding-top:170px}
+body{background-image:radial-gradient(900px 460px at 12% -4%,color-mix(in srgb,var(--accent-2) 24%,transparent),transparent 62%),radial-gradient(760px 420px at 92% 2%,color-mix(in srgb,var(--accent) 17%,transparent),transparent 62%);background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0,#000,transparent);mask-image:radial-gradient(ellipse 80% 55% at 50% 0,#000,transparent)}
+.nav{top:10px;width:calc(100% - 1.6rem);max-width:1180px;margin:10px auto 0;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.nav .wrap{height:58px;padding:0 12px}
+.sticky{top:76px;border:1px solid var(--line);border-radius:16px;margin:.6rem auto 0;width:calc(100% - 1.6rem);max-width:1180px;padding:.6rem 0;box-shadow:var(--shadow)}
+.logo{border-radius:11px;box-shadow:0 6px 18px -6px var(--accent)}
+.btn{border-radius:11px}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0;color:var(--accent-ink);box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.chip.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
+.hero{padding:4.6rem 0 2.4rem}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,7vw,5rem);line-height:1;letter-spacing:-.02em;max-width:18ch}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.hero p{font-size:1.12rem;max-width:52ch}
+.live{background:color-mix(in srgb,var(--surface) 70%,transparent);backdrop-filter:blur(8px)}
+.hero .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:nth-child(2){animation-delay:.07s}.hero .wrap>*:nth-child(3){animation-delay:.14s}.hero .wrap>*:nth-child(4){animation-delay:.21s}.hero .wrap>*:nth-child(5){animation-delay:.28s}.hero .wrap>*:nth-child(6){animation-delay:.35s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+.stat b{font-family:var(--serif);font-weight:400;font-size:2.5rem;letter-spacing:-.02em}
+.stats{border-top-color:var(--line)}
+.ov button,.card{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 60%,var(--surface)),var(--surface))}
+.ov button{border-color:var(--line)}
+.ov button::after,.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c,var(--accent)) 18%,transparent),transparent 70%)}
+.ov button:hover::after,.card:hover::after{opacity:1}
+.card{padding:1.2rem 1.2rem 1.1rem 1.4rem}
+.card:hover{transform:translateY(-3px)}
+.ficon,.sec-icon{border-radius:12px}
+.sec-icon{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,transparent),color-mix(in srgb,var(--accent-2) 20%,transparent));border:1px solid var(--line)}
+.section{margin:3.2rem 0}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:-.01em}
+.bar h2{font-family:var(--serif);font-weight:400;font-size:2.2rem;letter-spacing:-.01em}
+.code{border:1px solid var(--line);background:color-mix(in srgb,var(--accent-2) 12%,transparent)}
+.feature{border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2) 55%,transparent 90%) border-box;padding:1.7rem 1.8rem;border-radius:20px}
+.feature h2{font-family:var(--serif);font-weight:400;font-size:2rem;letter-spacing:-.01em}
+.feature .sec-icon{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0}
+.panel{border-radius:20px}
+.subw{border-radius:99px}
+.tag{border:1px solid var(--line);background:transparent}
+footer{margin-top:5rem;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--surface) 60%,transparent))}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+@media(max-width:640px){.hero{padding-top:2.6rem}.nav,.sticky{width:calc(100% - 1rem)}.sec-head h2{font-size:1.5rem}.bar h2{font-size:1.7rem}}
 </style>
 </head>
 <body>
@@ -165,8 +211,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
-  <div class="live"><span class="dot"></span> Synced with Google Drive</div>
-  <h1>Fall 26 study materials for Section 68_F</h1>
+  <div class="live"><span class="dot"></span> <span id="liveTxt">Study material library</span></div>
+  <h1>Fall 26 study materials for <em>Section 68_F</em></h1>
   <p>Slides, books, lab manuals and exam questions for every course, in one searchable place.</p>
   <div class="cta"><a class="btn primary lg" href="#materials"><i class="fa-solid fa-book-open"></i> Browse materials</a><a class="btn lg" href="#drive"><i class="fa-brands fa-google-drive"></i> Open live folders</a></div>
   <div class="ov" id="overview"></div>
@@ -190,7 +236,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
   
 
   <div class="bar" id="materials"><h2>Study materials<small id="count"></small></h2>
-    <div class="tools"><select id="typeSel" aria-label="Filter by file type"></select><select id="sort" aria-label="Sort files"><option value="def">Course order</option><option value="az">Name A to Z</option></select>
+    <div class="tools"><button class="btn sm icon" id="syncBtn" hidden aria-label="Refresh from Drive" title="Refresh from Drive"><i class="fa-solid fa-rotate"></i></button><select id="typeSel" aria-label="Filter by file type"></select><select id="sort" aria-label="Sort files"><option value="def">Course order</option><option value="az">Name A to Z</option></select>
     <div class="seg"><button id="vCards" class="on" aria-label="Card view"><i class="fa-solid fa-table-cells-large"></i></button><button id="vList" aria-label="List view"><i class="fa-solid fa-list"></i></button></div></div></div>
   <div id="out"></div><noscript><p class="pl-empty">Turn on JavaScript to browse the materials, or open the main Drive folder directly.</p></noscript>
   <section class="panel closed" id="drive">
@@ -222,9 +268,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 const folderMap={
 all:[["Main Root Folder (All Courses)","1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A"],["CSE223 Folder","1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ"],["CSE225 Folder","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["CSE227 Folder","1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq"],["CSE228 Folder","19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK"],["CSE224 Lab Folder","1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO"]],
 CSE223:[["CSE223 Main","1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ"],["Mid Term","1POdeQlm16Rbqh5PHXAQaDRmd_mb0El1i"],["Final Term","1T64gFJERrzUlWUoLtkrnAHBwbRm0TSei"],["Quiz Questions","11FdWi-vlznmkvojBtg7SDksbcrviG4VC"],["Ex Mid Questions","1mMqV43gB4PGZKlwYXDiwyzWAxuLsdCue"]],
-CSE225:[["CSE225 Main","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["Mid Term","1GsYzrj3RdJCo_mgPgkCSu-0y3hZ4QbGI"],["Week 1","18GZP4IzqGUC9kGm7hN571v-vcBlP_eke"],["Week 2","1eyOOeYHdhz3NtueguHKLuA8OCfHXw22p"],["Week 3","14Km5LyrskpfDnD5KrBiC1ND_QFrLJ6qi"],["Week 4","1wZAjOKNANTTrgRKmNKZ7W_f0BTCpAzxJ"],["Week 5","1O-JtqczZxB6VaWkGoL51x5M-OSUhI69M"],["Final Term","1bjRSBAZnp7YNJwenXcGiRIMAgqGEYKIE"],["Reference Books","1MG0G88nbKQkDnFRbZ9dpX-OtJYKr1uvQ"],["Ex Mid Questions","1bGznroKUgxXhKb6HxwFzoaJTlCUOaJ58"]],
+CSE225:[["CSE225 Main","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["Mid Term","1GsYzrj3RdJCo_mgPgkCSu-0y3hZ4QbGI"],["Week 1","18GZP4IzqGUC9kGm7hN571v-vcBlP_eke"],["Week 2","1eyOOeYHdhz3NtueguHKLuA8OCfHXw22p"],["Week 3","14Km5LyrskpfDnD5KrBiC1ND_QFrLJ6qi"],["Week 4","1wZAjOKNANTTrgRKmNKZ7W_f0BTCpAzxJ"],["Final Term","1bjRSBAZnp7YNJwenXcGiRIMAgqGEYKIE"],["Reference Books","1MG0G88nbKQkDnFRbZ9dpX-OtJYKr1uvQ"],["Ex Mid Questions","1bGznroKUgxXhKb6HxwFzoaJTlCUOaJ58"]],
 CSE227:[["CSE227 Main","1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq"],["Mid Term","16vwwH4ki1Gp9ypXiqS7huw_5PMbidb3d"],["Final Term","19ofes9iGEBusEYCVt1Ho6vXdS3r_dgBd"],["Practice PDF","1DnD_X16QhQuTLacRNOIg4fMIKRRYzkz1"],["Quiz Questions","1vu177W6ZPIciIJvGaj2ACePmpDOOs0H4"],["Ex Mid Questions","1iMlwkpePjXhAY5apjgRxwskFiQe977wi"]],
-CSE228:[["CSE228 Main","19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK"],["Mid Term","1FRlUQBgEu0wCKmNXXCI7irUBn7sY9GvU"],["Final Term","1r7YNdBXaLzeK1t6P8vya4gNIANJZARS7"],["Reference Books","1GFYzvsjLk9CfZJa3dfLDjVFmV0QVcVl5"],["Ex Mid Questions","118j4-Z8cByfQBFNt4G7-HmwKUJPFpbK0"],["Extra Folder","1znIYcmLnJxITmBr_50FgcnAqMMQHYWdC"]],
+CSE228:[["CSE228 Main","19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK"],["Mid Term","1FRlUQBgEu0wCKmNXXCI7irUBn7sY9GvU"],["Final Term","1r7YNdBXaLzeK1t6P8vya4gNIANJZARS7"],["Reference Books","1GFYzvsjLk9CfZJa3dfLDjVFmV0QVcVl5"],["Ex Mid Questions","118j4-Z8cByfQBFNt4G7-HmwKUJPFpbK0"]],
 CSE224:[["CSE224 Lab Folder","1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO"]]};
 for(const k in folderMap)folderMap[k]=folderMap[k].map(([label,id])=>({label,id}));
 const IC={pdf:"fa-file-pdf icon-pdf",ppt:"fa-file-powerpoint icon-ppt",book:"fa-book icon-book",prac:"fa-pen-to-square icon-ques",lab:"fa-book-open icon-book"};
@@ -244,7 +290,6 @@ F("Week 1: Lesson 1 - Overview of Data Comm.","Mid Term","PPTX","ppt","1sDPSsYyd
 F("Week 2: Lesson 1 & 2 - Layered Architecture","Mid Term","PPTX","ppt","19rHUsUQm6sfufbnxxyUCY9pAjcthsc7w"),
 F("Week 3: Physical Layer (Analog & Digital)","Mid Term","PPTX","ppt","1qeIkn-gUDd-ihmKVDjh8C4QXEGDGzdFL"),
 F("Week 4: Digital Transmission","Mid Term","PPTX","ppt","1xl6wzfTL8Id32MzWbzbcPawHRjLBhuQF"),
-F("Week 5: Analog Transmission","Mid Term","PPTX","ppt","1NOpt1qEDrjmVb4I1ivCYJKjSEQgX7mHe"),
 F("Book: Data Communications & Networking (Forouzan)","Book","PDF","book","1NIMYVdTndPoa0tvR5uOhl-Q1aIRhGJ2X"),
 F("Book: Data & Computer Communications (Stallings)","Book","PDF","book","1oFiTFlVCDPqFvtkwP5_JlsiUL2kHQFpM")]},
 {code:"CSE227",title:"Systems Analysis and Design",icon:"fa-sitemap",files:[
@@ -266,12 +311,19 @@ F("Full Lab Report (Experiments 1 - 8)","Lab Report","PDF","pdf","1psKUpRnYjaZZ9
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const fmatch=(f,l)=>f.category===l||f.name.startsWith(l)||(l==="Reference Books"&&f.category==="Book")||(l==="Practice PDF"&&f.category==="Practice");
+// Optional ZIP files: upload a ZIP to Drive (share: anyone with the link) and paste its link or file ID here.
+const ZIPS={all:"",CSE223:"",CSE225:"",CSE227:"",CSE228:"",CSE224:""};
+const zipId=k=>((ZIPS[k]||'').match(/[-\w]{25,}/)||[])[0];
+const zipGo=id=>{const fr=document.createElement('iframe');fr.style.display='none';fr.src='https://drive.google.com/uc?export=download&id='+id;document.body.appendChild(fr);setTimeout(()=>fr.remove(),90000);toast('ZIP download started')};
+// AUTO-SYNC: paste a Google Drive API key to read folders and files live from Drive (add/delete/rename updates the page by itself).
+const DRIVE_API_KEY="AIzaSyAvO28NMn5eW9-w1pLoNEe519Rad-zRy7I";
+const fmatch=(f,l)=>f.path?f.path.includes(l):f.category===l||f.name.startsWith(l)||(l==="Reference Books"&&f.category==="Book")||(l==="Practice PDF"&&f.category==="Practice");
 const state={sub:{},course:'all',type:'all',q:'',view:'list',sort:'def',layout:'cards',folder:folderMap.all[0].id};
 const kindOf=f=>{const c=f.icon.split(' ')[1]||'';return c.replace('icon-','')};
-const typeOf=f=>f.category==='Book'||/book/.test(f.icon)?'Books':/PPT/.test(f.type)?'Slides':/Practice|Quiz|Ques/i.test(f.category)?'Practice':'Documents';
-const allFiles=coursesData.flatMap(c=>c.files.map(f=>({...f,course:c})));
-const types=['all',...new Set(allFiles.map(f=>typeOf(f)))];
+const typeOf=f=>/book/i.test(f.category)||/book/i.test((f.path||[]).join(' '))||(!f.path&&/book/.test(f.icon))?'Books':/PPT/.test(f.type)?'Slides':/Practice|Quiz|Ques/i.test(f.category)?'Practice':'Documents';
+let allFiles,types;
+function refreshIndex(){allFiles=coursesData.flatMap(c=>c.files.map(f=>({...f,course:c})));types=['all',...new Set(allFiles.map(f=>typeOf(f)))]}
+refreshIndex();
 
 function hi(text,q){const t=esc(text);if(!q)return t;const r=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');return t.replace(r,'<mark>$1</mark>')}
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),1800)}
@@ -329,7 +381,7 @@ function render(){
     const sl=(!ql&&state.type==='all')?state.sub[c.code]:'';if(sl)files=files.filter(f=>fmatch(f,sl));
     if(state.sort==='az')files.sort((a,b)=>a.name.localeCompare(b.name));
     if(!files.length&&!sl)return;total+=files.length+(sl?1:0);
-    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download every file in this course"><i class="fa-solid fa-download"></i> <span class="hide-sm">Download course</span></button></div>${subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
+    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download this whole course"><i class="fa-solid ${zipId(c.code)?'fa-file-zipper':'fa-download'}"></i> <span class="hide-sm">${zipId(c.code)?'Download ZIP':'Download course'}</span></button></div>${subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
     files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
   });
   $('count').textContent=total+(total===1?' file':' files');
@@ -346,7 +398,8 @@ function dl(files,label){
     fr.src='https://drive.google.com/uc?export=download&id='+fid(f.url);document.body.appendChild(fr);
     setTimeout(()=>fr.remove(),90000);toast(`Downloading ${i} of ${files.length}`);setTimeout(next,1500)})();
 }
-$('dlAll').onclick=()=>dl(allFiles,'68_F Study Material');
+$('dlAll').onclick=()=>zipId('all')?zipGo(zipId('all')):dl(allFiles,'68_F Study Material');
+if(zipId('all'))$('dlAll').innerHTML='<i class="fa-solid fa-file-zipper"></i> Download ZIP';
 $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
 $('out').onclick=e=>{
   const fo=e.target.closest('[data-fo]');
@@ -357,7 +410,7 @@ $('out').onclick=e=>{
   if(df){const [code,label]=df.dataset.dlf.split('|'),c=coursesData.find(x=>x.code===code),fl=c.files.filter(f=>fmatch(f,label));
     if(fl.length)dl(fl,code+' '+label);else toast('Use Open in Drive to download from this folder');return}
   const one=e.target.closest('[data-dl]');if(one){dl([{url:one.dataset.dl}]);return}
-  const dc=e.target.closest('[data-dlc]');if(dc){const c=coursesData.find(x=>x.code===dc.dataset.dlc);dl(c.files,c.code);return}
+  const dc=e.target.closest('[data-dlc]');if(dc){if(zipId(dc.dataset.dlc)){zipGo(zipId(dc.dataset.dlc));return}const c=coursesData.find(x=>x.code===dc.dataset.dlc);dl(c.files,c.code);return}
   const b=e.target.closest('[data-copy]');if(!b)return;
   (navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(()=>toast('Link copied')).catch(()=>toast('Copy failed, use Open instead'))};
 let tm;$('q').addEventListener('input',e=>{clearTimeout(tm);tm=setTimeout(()=>{state.q=e.target.value;render()},120)});
@@ -369,49 +422,49 @@ $('topBtn').onclick=()=>scrollTo({top:0});
 
 function setTheme(t){document.documentElement.dataset.theme=t;$('theme').innerHTML=`<i class="fa-solid fa-${t==='dark'?'moon':'sun'}"></i>`;try{localStorage.setItem('theme68f',t)}catch(e){}}
 let saved=null;try{saved=localStorage.getItem('theme68f')}catch(e){}
-setTheme(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+setTheme(saved||'dark');
 $('theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
 
 $('sort').onchange=e=>{state.sort=e.target.value;render()};
 [['vCards','cards'],['vList','list']].forEach(([id,l])=>$(id).onclick=()=>{state.layout=l;$('vCards').classList.toggle('on',l==='cards');$('vList').classList.toggle('on',l==='list');render()});
 $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');$('typeSel').onchange=e=>{state.type=e.target.value;render()};
-buildOverview();buildStats();buildRails();buildFolders();render();
-
-const DRIVE_API_KEY="AIzaSyAvO28NMn5eW9-w1pLoNEe519Rad-zRy7I";
-async function autoSync(){
-  if(!DRIVE_API_KEY)return;
-  const MT={'application/pdf':['PDF','pdf'],'application/vnd.openxmlformats-officedocument.presentationml.presentation':['PPTX','ppt'],'application/vnd.ms-powerpoint':['PPT','ppt'],'application/vnd.google-apps.presentation':['PPTX','ppt'],'application/vnd.openxmlformats-officedocument.wordprocessingml.document':['DOCX','pdf'],'application/msword':['DOC','pdf'],'application/vnd.google-apps.document':['DOC','pdf']};
-  let added=0;
-  for(const c of coursesData){
-    const l=folderMap[c.code]||[],subs=l.length>1?l.slice(1):l;
-    const known=new Set(c.files.map(f=>fid(f.url)));
-    for(const s of subs){
-      try{
-        let tok='';
-        do{
-          const u='https://www.googleapis.com/drive/v3/files?q='+encodeURIComponent("'"+s.id+"' in parents and trashed=false")+'&fields=nextPageToken,files(id,name,mimeType)&pageSize=1000&key='+DRIVE_API_KEY+(tok?'&pageToken='+tok:'');
-          const r=await fetch(u);if(!r.ok)break;const j=await r.json();
-          (j.files||[]).forEach(x=>{
-            if(x.mimeType==='application/vnd.google-apps.folder'||known.has(x.id))return;
-            const m=MT[x.mimeType]||[(x.name.split('.').pop()||'FILE').toUpperCase().slice(0,5),'pdf'];
-            const ic=/book/i.test(s.label)?'book':/practice/i.test(s.label)?'prac':m[1];
-            c.files.push({name:x.name.replace(/\.[^.]+$/,''),category:s.label,type:m[0],icon:IC[ic],url:'https://drive.google.com/file/d/'+x.id+'/view'});
-            known.add(x.id);added++;
-          });
-          tok=j.nextPageToken||'';
-        }while(tok);
-      }catch(e){}
-    }
-  }
-  if(!added)return;
-  allFiles.length=0;allFiles.push(...coursesData.flatMap(c=>c.files.map(f=>({...f,course:c}))));
-  types.length=0;types.push('all',...new Set(allFiles.map(f=>typeOf(f))));
-  $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');state.type='all';
-  $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
-  buildOverview();buildStats();buildRails();render();
+buildOverview();const FOLDER='application/vnd.google-apps.folder';
+const natural=(a,b)=>a.localeCompare(b,undefined,{numeric:true});
+async function driveList(id){let out=[],tok='';
+  do{const q=encodeURIComponent(`'${id}' in parents and trashed=false`);
+    const r=await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&fields=nextPageToken,files(id,name,mimeType)&pageSize=1000&key=${DRIVE_API_KEY}`+(tok?`&pageToken=${tok}`:''));
+    if(!r.ok)throw new Error('Drive '+r.status);const j=await r.json();out=out.concat(j.files||[]);tok=j.nextPageToken||''}while(tok);
+  return out}
+const ICONS={pdf:'fa-file-pdf icon-pdf',ppt:'fa-file-powerpoint icon-ppt',pptx:'fa-file-powerpoint icon-ppt',doc:'fa-file-word icon-book',docx:'fa-file-word icon-book',xls:'fa-file-excel icon-book',xlsx:'fa-file-excel icon-book',zip:'fa-file-zipper icon-ques',rar:'fa-file-zipper icon-ques',png:'fa-file-image icon-ques',jpg:'fa-file-image icon-ques',jpeg:'fa-file-image icon-ques'};
+async function walk(id,path,files,folders){
+  const items=await driveList(id);
+  await Promise.all(items.map(async it=>{
+    if(it.mimeType===FOLDER){if(path.length<4){const p=[...path,it.name];folders.push({label:it.name,id:it.id,key:p.join('/')});await walk(it.id,p,files,folders)}}
+    else{const ext=(it.name.includes('.')?it.name.split('.').pop():'file').toLowerCase();
+      files.push({name:it.name.replace(/\.[A-Za-z0-9]{2,5}$/,''),category:path[0]||'Files',path,type:ext.toUpperCase(),icon:ICONS[ext]||'fa-file icon-ques',url:'https://drive.google.com/file/d/'+it.id+'/view'})}
+  }))}
+async function syncDrive(force){
+  const badge=$('liveTxt');badge.textContent='Syncing with Drive...';
+  let cache=null;try{cache=JSON.parse(sessionStorage.getItem('drive68f')||'null')}catch(e){}
+  if(!force&&cache&&Date.now()-cache.t<300000){applyDrive(cache.data);badge.textContent='Live from Google Drive';return}
+  try{
+    const data={};
+    await Promise.all(coursesData.map(async c=>{const files=[],folders=[];await walk(folderMap[c.code][0].id,[],files,folders);
+      files.sort((a,b)=>natural(a.path.join('/')+'/'+a.name,b.path.join('/')+'/'+b.name));folders.sort((a,b)=>natural(a.key,b.key));data[c.code]={files,folders}}));
+    try{sessionStorage.setItem('drive68f',JSON.stringify({t:Date.now(),data}))}catch(e){}
+    applyDrive(data);badge.textContent='Live from Google Drive';if(force)toast('Updated from Drive');
+  }catch(e){badge.textContent='Showing saved list';toast('Could not reach Drive, showing saved list')}
 }
-autoSync();
+function applyDrive(data){
+  coursesData.forEach(c=>{const d=data[c.code];if(!d)return;c.files=d.files;folderMap[c.code]=[folderMap[c.code][0],...d.folders.map(f=>({label:f.label,id:f.id}))]});
+  refreshIndex();state.sub={};
+  $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');
+  buildOverview();buildStats();buildRails();buildFolders();render();
+  $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
+}
+document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card,.ov button');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+buildStats();buildRails();buildFolders();render();
+if(DRIVE_API_KEY){$('syncBtn').hidden=false;$('syncBtn').onclick=()=>syncDrive(true);syncDrive()}
 </script>
-<script data-goatcounter="https://parveshasan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
