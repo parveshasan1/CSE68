@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1120"><meta property="og:title" content="Fall 26 | 68_F Study Portal"><meta property="og:description" content="Slides, books, lab manuals and exam questions for Section 68_F, DIU."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%236ee7b7%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%2367e8f9%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2216%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M32%2015%2053%2026%2032%2037%2011%2026z%22%20fill=%22%2304101c%22/%3E%3Cpath%20d=%22M20%2032v8c0%203.5%205.5%206.5%2012%206.5S44%2043.5%2044%2040v-8l-12%206z%22%20fill=%22%2304101c%22%20opacity=%22.88%22/%3E%3Cpath%20d=%22M53%2026v11%22%20stroke=%22%2304101c%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b1120">
+<meta property="og:title" content="Fall 26 | 68_F Study Portal">
+<meta property="og:description" content="Slides, books, lab manuals and exam questions for Section 68_F, DIU.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%236ee7b7%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%2367e8f9%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2216%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M32%2015%2053%2026%2032%2037%2011%2026z%22%20fill=%22%2304101c%22/%3E%3Cpath%20d=%22M20%2032v8c0%203.5%205.5%206.5%2012%206.5S44%2043.5%2044%2040v-8l-12%206z%22%20fill=%22%2304101c%22%20opacity=%22.88%22/%3E%3Cpath%20d=%22M53%2026v11%22%20stroke=%22%2304101c%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <title>Fall 26 | 68_F Study Portal</title>
 <meta name="description" content="Slides, books, lab manuals and exam questions for Section 68_F, Daffodil International University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +36,7 @@ a{color:inherit}
 .btn.primary:hover{filter:brightness(1.08)}
 .btn.sm{height:32px;padding:0 11px;font-size:.8rem}
 .btn.icon{width:38px;padding:0;justify-content:center}
+.btn.sm.icon{width:32px;padding:0}
 .hero{padding:3.5rem 0 2rem}
 .hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;font-weight:800;letter-spacing:-.035em;max-width:21ch}
 .hero p{margin-top:1rem;color:var(--muted);font-size:1.05rem;max-width:56ch}
@@ -54,8 +58,6 @@ a{color:inherit}
 .chip:hover{color:var(--text);border-color:var(--muted)}
 .chip.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .chip em{font-style:normal;font-size:.72rem;opacity:.75}
-.chip.type{padding:5px 12px;font-size:.8rem}
-.chip.type.on{background:var(--surface-2);color:var(--text);border-color:var(--accent)}
 .panel{margin:3rem 0 1rem;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
 .panel-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem;padding:1rem 1.2rem}
 .panel-title{display:flex;align-items:center;gap:10px;font-weight:700;min-width:0}
@@ -84,9 +86,9 @@ a{color:inherit}
 .ficon{flex:none;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-size:1.2rem;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent)}
 .card h3{font-size:.93rem;font-weight:600;line-height:1.35;margin-bottom:6px}
 .tag{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:5px;background:var(--surface-2);color:var(--muted)}
-.foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .ftype{font-size:.76rem;color:var(--muted);font-weight:600}
-.row{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.row{display:flex;gap:6px;flex-wrap:wrap}
 mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 .empty{text-align:center;padding:4rem 1rem;color:var(--muted);border:1px dashed var(--line);border-radius:16px}
 .empty i{font-size:2rem;margin-bottom:.8rem;display:block}
@@ -135,20 +137,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 .sub em{font-style:normal;font-size:.72rem;color:var(--muted);font-weight:600;background:var(--surface-2);border-radius:99px;padding:0 7px}
 .subd{border-left:1px solid var(--line);padding:8px 11px;color:var(--muted)}
 .subd:hover{color:var(--accent)}
-.subpanel{margin:-.3rem 0 1.2rem;border:1px solid var(--accent);border-radius:13px;overflow:hidden;background:var(--surface);animation:open .22s ease}
-@keyframes open{from{opacity:0;transform:translateY(-6px)}}
-.sp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;padding:.7rem 1rem;border-bottom:1px solid var(--line)}
-.sp-head b{display:flex;align-items:center;gap:9px}
 .subnote{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 .9rem;font-size:.9rem}.subnote span{color:var(--muted)}.subnote .btn:first-of-type{margin-left:auto}
 .subs.kids{margin-top:-.3rem;padding-left:1rem;border-left:2px solid var(--line)}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.crumb{border:0;background:none;color:var(--muted);font:600 .88rem 'Inter',sans-serif;cursor:pointer;padding:2px 4px;border-radius:6px}.crumb:hover{color:var(--accent)}.crumb.now{color:var(--text)}.crumb-sep{font-size:.6rem;color:var(--muted)}
-.plist{max-height:420px;overflow:auto}
-.prow{display:flex;align-items:center;gap:12px;padding:.65rem 1rem;border-bottom:1px solid var(--line)}
-.prow:last-child{border-bottom:0}
-.prow:hover{background:var(--surface-2)}
-.prow .ficon{width:36px;height:36px;font-size:1rem}
-.prow .nm{flex:1;min-width:0;font-size:.9rem;font-weight:600;line-height:1.3}
-.prow .nm small{display:block;color:var(--muted);font-weight:500;font-size:.75rem}
 .pl-empty{padding:1.6rem 1rem;text-align:center;color:var(--muted);font-size:.9rem}
 .feature{margin-top:2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem;padding:1.4rem 1.5rem;border-radius:16px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--surface)),var(--surface));box-shadow:var(--shadow)}
 .feature .ft{display:flex;gap:14px;align-items:center;min-width:0}
@@ -157,12 +148,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 .feature p{color:var(--muted);font-size:.88rem}
 .feature .acts{display:flex;gap:10px;flex-wrap:wrap}
 .dlnote{font-size:.76rem;color:var(--muted);margin-top:.6rem}
-@media(max-width:640px){.ov{grid-template-columns:1fr 1fr}.ov .sec-icon{display:none}.fgrid{grid-template-columns:1fr}.grid.list .card{flex-direction:column;align-items:stretch}}
-@media(max-width:640px){.hide-sm{display:none}.hero{padding-top:2.2rem}.frame{height:320px}.stats{gap:1.4rem}.kbd{display:none}.search input{padding-right:14px}}
+@media(max-width:640px){.ov{grid-template-columns:1fr 1fr}.ov .sec-icon{display:none}.fgrid{grid-template-columns:1fr}.grid.list .card{flex-direction:column;align-items:stretch}.hide-sm{display:none}.hero{padding-top:2.2rem}.frame{height:320px}.stats{gap:1.4rem}.kbd{display:none}.search input{padding-right:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 /* ===== Premium layer ===== */
-:root{--serif:'Instrument Serif',Georgia,serif}
+:root{--serif:'Inter',system-ui,sans-serif}
 :root[data-theme=dark]{--bg:#060a14;--surface:#0d1424;--surface-2:#141d33;--line:rgba(148,163,184,.15);--accent:#7dd3fc;--accent-2:#a5b4fc;--accent-ink:#04101c;--glass:rgba(8,12,24,.7);--shadow:0 24px 50px -28px rgba(0,0,0,.9)}
 :root[data-theme=light]{--bg:#f7f6f2;--surface:#fff;--surface-2:#f1efe8;--line:rgba(15,23,42,.11);--glass:rgba(247,246,242,.78);--shadow:0 22px 44px -28px rgba(30,41,59,.35)}
 html{scroll-padding-top:170px}
@@ -176,14 +166,14 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;op
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0;color:var(--accent-ink);box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
 .chip.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
 .hero{padding:4.6rem 0 2.4rem}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,7vw,5rem);line-height:1;letter-spacing:-.02em;max-width:18ch}
-.hero h1 em{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.hero h1{font-weight:800;font-size:clamp(2.3rem,5.6vw,4.1rem);line-height:1.06;letter-spacing:-.035em;max-width:20ch}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
 .hero p{font-size:1.12rem;max-width:52ch}
 .live{background:color-mix(in srgb,var(--surface) 70%,transparent);backdrop-filter:blur(8px)}
 .hero .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .hero .wrap>*:nth-child(2){animation-delay:.07s}.hero .wrap>*:nth-child(3){animation-delay:.14s}.hero .wrap>*:nth-child(4){animation-delay:.21s}.hero .wrap>*:nth-child(5){animation-delay:.28s}.hero .wrap>*:nth-child(6){animation-delay:.35s}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}}
-.stat b{font-family:var(--serif);font-weight:400;font-size:2.5rem;letter-spacing:-.02em}
+.stat b{font-weight:800;font-size:2rem;letter-spacing:-.03em}
 .stats{border-top-color:var(--line)}
 .ov button,.card{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 60%,var(--surface)),var(--surface))}
 .ov button{border-color:var(--line)}
@@ -194,29 +184,19 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;op
 .ficon,.sec-icon{border-radius:12px}
 .sec-icon{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 20%,transparent),color-mix(in srgb,var(--accent-2) 20%,transparent));border:1px solid var(--line)}
 .section{margin:3.2rem 0}
-.sec-head h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;letter-spacing:-.01em}
-.bar h2{font-family:var(--serif);font-weight:400;font-size:2.2rem;letter-spacing:-.01em}
+.sec-head h2{font-weight:700;font-size:1.45rem;letter-spacing:-.025em}
+.bar h2{font-weight:800;font-size:1.7rem;letter-spacing:-.03em}
 .code{border:1px solid var(--line);background:color-mix(in srgb,var(--accent-2) 12%,transparent)}
 .feature{border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2) 55%,transparent 90%) border-box;padding:1.7rem 1.8rem;border-radius:20px}
-.feature h2{font-family:var(--serif);font-weight:400;font-size:2rem;letter-spacing:-.01em}
+.feature h2{font-weight:800;font-size:1.5rem;letter-spacing:-.03em}
 .feature .sec-icon{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:0}
+.bt b{font-weight:800;font-size:1.05rem;letter-spacing:-.02em}
 .panel{border-radius:20px}
 .subw{border-radius:99px}
 .tag{border:1px solid var(--line);background:transparent}
 footer{margin-top:5rem;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--surface) 60%,transparent))}
 ::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
-@media(max-width:640px){.hero{padding-top:2.6rem}.nav,.sticky{width:calc(100% - 1rem)}.sec-head h2{font-size:1.5rem}.bar h2{font-size:1.7rem}}
-
-/* ===== Professional type: single sans family, no italics ===== */
-:root{--serif:'Inter',system-ui,sans-serif}
-.hero h1{font-weight:800;font-size:clamp(2.3rem,5.6vw,4.1rem);line-height:1.06;letter-spacing:-.035em;max-width:20ch}
-.hero h1 em{font-style:normal}
-.stat b{font-weight:800;font-size:2rem;letter-spacing:-.03em}
-.sec-head h2{font-weight:700;font-size:1.45rem;letter-spacing:-.025em}
-.bar h2{font-weight:800;font-size:1.7rem;letter-spacing:-.03em}
-.feature h2{font-weight:800;font-size:1.5rem;letter-spacing:-.03em}
-.bt b{font-weight:800;font-size:1.05rem;letter-spacing:-.02em}
-@media(max-width:640px){.sec-head h2{font-size:1.25rem}.bar h2{font-size:1.4rem}}
+@media(max-width:640px){.hero{padding-top:2.6rem}.nav,.sticky{width:calc(100% - 1rem)}.sec-head h2{font-size:1.25rem}.bar h2{font-size:1.4rem}}
 
 /* ===== Accent palettes ===== */
 :root[data-theme=dark][data-accent=emerald]{--accent:#6ee7b7;--accent-2:#67e8f9}
@@ -242,7 +222,7 @@ footer{margin-top:5rem;background:linear-gradient(180deg,transparent,color-mix(i
 @keyframes drift3{to{transform:translate(-16vw,-20vh) scale(1.25)}}
 @media(max-width:640px){.bgfx i{filter:blur(60px)}.bgfx i:nth-child(3){display:none}}
 
-/* ===== Premium background: constellation canvas + grain ===== */
+/* ===== Constellation canvas + grain ===== */
 .net{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
 body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
 :root[data-theme=light] body::after{opacity:.035}
@@ -269,92 +249,74 @@ footer .wrap{display:block}
 .legal{margin-top:1.4rem}
 
 /* ===== Gemini AI Study Assistant & Interactive Exam Practice Styles ===== */
-.btn.ai-btn{border-color:color-mix(in srgb,var(--accent) 50%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent-2) 16%,var(--surface)));color:var(--text)}
-.btn.ai-btn i{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn.ai-btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 6px 18px -6px color-mix(in srgb,var(--accent) 55%,transparent)}
-.ai-backdrop{position:fixed;inset:0;z-index:120;background:rgba(4,8,18,.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
-.ai-backdrop.open{opacity:1;visibility:visible}
-.ai-drawer{position:fixed;top:0;right:0;bottom:0;z-index:130;width:min(540px,100vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1),width .3s cubic-bezier(.2,.8,.2,1)}
+.btn.ai-btn{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent-2) 16%,var(--surface)));color:var(--accent);font-weight:700}
+.btn.ai-btn:hover{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);border-color:transparent}
+.ai-fab{position:fixed;right:18px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:65;display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 16px;border-radius:99px;border:1px solid color-mix(in srgb,var(--accent) 50%,var(--line));background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);font:700 .86rem 'Inter',sans-serif;box-shadow:0 12px 28px -8px color-mix(in srgb,var(--accent) 70%,transparent);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.ai-fab:hover{transform:translateY(-2px) scale(1.03)}
+.ai-backdrop{position:fixed;inset:0;z-index:110;background:rgba(4,10,22,.62);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s ease}
+.ai-backdrop.open{opacity:1;pointer-events:auto}
+.ai-drawer{position:fixed;top:0;right:0;bottom:0;z-index:120;width:min(540px,100vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.65);display:flex;flex-direction:column;transform:translateX(102%);transition:transform .3s cubic-bezier(.2,.8,.2,1),width .25s ease}
 .ai-drawer.open{transform:translateX(0)}
-.ai-drawer.split{width:min(1140px,100vw)}
-.ai-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:.95rem 1.2rem;border-bottom:1px solid var(--line);background:var(--glass);backdrop-filter:blur(12px)}
+.ai-drawer.split{width:min(1080px,100vw)}
+.ai-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:.85rem 1.1rem;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 65%,var(--surface))}
 .ai-brand{display:flex;align-items:center;gap:10px;min-width:0}
-.ai-spark{width:36px;height:36px;border-radius:10px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);font-size:1rem;box-shadow:0 6px 16px -4px color-mix(in srgb,var(--accent) 60%,transparent)}
-.ai-brand div{min-width:0}
-.ai-brand b{display:block;font-size:.98rem;line-height:1.2;letter-spacing:-.01em}
-.ai-brand small{display:block;font-size:.75rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ai-head-acts{display:flex;align-items:center;gap:6px;flex:none}
-.ai-body{flex:1;display:flex;min-height:0;overflow:hidden}
-.ai-preview{display:none;flex:1.08;border-right:1px solid var(--line);background:#0a0f1d;position:relative;flex-direction:column}
+.ai-badge{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);font-size:1rem;flex:none}
+.ai-title{min-width:0}
+.ai-title b{display:block;font-size:.95rem;line-height:1.2}
+.ai-title small{display:block;font-size:.75rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ai-keybar{display:none;align-items:center;gap:8px;padding:.65rem 1.1rem;background:color-mix(in srgb,var(--accent) 12%,var(--surface-2));border-bottom:1px solid var(--line);font-size:.78rem}
+.ai-keybar.show{display:flex;flex-wrap:wrap}
+.ai-keybar input{flex:1;min-width:190px;height:32px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:500 .78rem 'Inter',sans-serif}
+.ai-body{flex:1;display:grid;grid-template-columns:1fr;min-height:0;overflow:hidden}
+.ai-drawer.split .ai-body{grid-template-columns:1.05fr 1fr}
+.ai-preview{display:none;flex-direction:column;border-right:1px solid var(--line);background:#0b1120;min-height:0}
 .ai-drawer.split .ai-preview{display:flex}
-.ai-preview-bar{display:flex;align-items:center;justify-content:space-between;padding:.5rem .9rem;background:var(--surface-2);border-bottom:1px solid var(--line);font-size:.78rem;color:var(--muted)}
-.ai-preview iframe{flex:1;width:100%;border:0;background:#fff}
-.ai-chat-col{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg)}
-.ai-ctx-bar{padding:.65rem 1.1rem;background:var(--surface-2);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:.8rem}
-.ai-status{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--text);min-width:0}
-.ai-status span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ai-status i.ok{color:#10b981}
-.ai-status i.warn{color:#f59e0b}
-.ai-status i.spin{color:var(--accent)}
-.ai-ctx-actions{display:flex;align-items:center;gap:6px}
-.ai-prompts{display:flex;gap:7px;overflow-x:auto;padding:.65rem 1.1rem;border-bottom:1px solid var(--line);background:var(--surface);scrollbar-width:none}
+.ai-prev-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:.5rem .85rem;background:var(--surface-2);border-bottom:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.ai-prev-frame{flex:1;width:100%;border:0;background:#fff}
+.ai-chat-col{display:flex;flex-direction:column;min-height:0;background:var(--bg)}
+.ai-docbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:.6rem 1rem;background:var(--surface);border-bottom:1px solid var(--line);font-size:.8rem;flex-wrap:wrap}
+.ai-docstatus{display:flex;align-items:center;gap:8px;min-width:0;color:var(--muted);font-weight:600}
+.ai-docstatus i{color:var(--accent)}
+.ai-docstatus span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ai-prompts{display:flex;gap:6px;overflow-x:auto;padding:.6rem 1rem;border-bottom:1px solid var(--line);background:var(--surface);scrollbar-width:none}
 .ai-prompts::-webkit-scrollbar{display:none}
-.ai-chip{flex:none;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:600 .76rem 'Inter',sans-serif;cursor:pointer;transition:all .15s}
-.ai-chip:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface-2));transform:translateY(-1px)}
-.ai-chip i{color:var(--accent)}
-.ai-chip.quiz-chip{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 15%,var(--surface-2)),color-mix(in srgb,var(--accent-2) 15%,var(--surface-2)))}
-.ai-msgs{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:1rem;scroll-behavior:smooth}
-.ai-msg{display:flex;gap:10px;max-width:94%;animation:rise .25s ease both}
+.ai-pchip{flex:none;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:600 .75rem 'Inter',sans-serif;padding:5px 11px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .15s}
+.ai-pchip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.ai-pchip.quiz-chip{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 14%,var(--surface-2));color:var(--accent)}
+.ai-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.85rem}
+.ai-msg{display:flex;gap:10px;max-width:95%;animation:rise .22s ease}
 .ai-msg.user{align-self:flex-end;flex-direction:row-reverse}
-.ai-avatar{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;font-size:.82rem;background:var(--surface-2);border:1px solid var(--line);color:var(--accent)}
-.ai-msg.user .ai-avatar{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);border:0}
-.ai-bubble{padding:.85rem 1rem;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:.88rem;line-height:1.65;overflow-wrap:anywhere;width:100%}
-.ai-msg.user .ai-bubble{width:auto;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,var(--surface)),color-mix(in srgb,var(--accent-2) 18%,var(--surface)));border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
-.ai-bubble h3,.ai-bubble h4{margin:.5rem 0 .25rem;font-size:.95rem;color:var(--accent)}
-.ai-bubble h3:first-child,.ai-bubble h4:first-child{margin-top:0}
-.ai-bubble p{margin:.4rem 0}
-.ai-bubble p:first-child{margin-top:0}
-.ai-bubble p:last-child{margin-bottom:0}
-.ai-bubble ul,.ai-bubble ol{margin:.4rem 0 .4rem 1.25rem}
-.ai-bubble li{margin:.2rem 0}
-.ai-bubble code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;background:var(--surface-2);padding:2px 5px;border-radius:5px;border:1px solid var(--line)}
-.ai-bubble pre{background:var(--surface-2);padding:.75rem;border-radius:10px;border:1px solid var(--line);overflow-x:auto;margin:.5rem 0}
-.ai-bubble pre code{background:0;border:0;padding:0}
-.ai-foot{padding:.85rem 1.1rem calc(.85rem + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--surface)}
-.ai-input-wrap{display:flex;gap:8px;align-items:flex-end}
-.ai-input-wrap textarea{flex:1;min-height:42px;max-height:120px;padding:10px 13px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:500 .88rem 'Inter',sans-serif;resize:none;outline:none;line-height:1.45;transition:border-color .15s}
-.ai-input-wrap textarea:focus{border-color:var(--accent)}
-.ai-typing{display:inline-flex;gap:4px;align-items:center;padding:4px 2px}
-.ai-typing span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ait 1.2s infinite ease-in-out}
-.ai-typing span:nth-child(2){animation-delay:.2s}
-.ai-typing span:nth-child(3){animation-delay:.4s}
-@keyframes ait{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
-
-/* Interactive Quiz Card Styling */
-.quiz-box{display:flex;flex-direction:column;gap:12px;margin-top:6px}
-.quiz-top{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:10px;background:var(--surface-2);border:1px solid var(--line);font-size:.82rem;font-weight:700}
-.quiz-qcard{padding:12px;border-radius:12px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 55%,var(--surface))}
-.quiz-qtitle{font-weight:700;font-size:.88rem;margin-bottom:9px;color:var(--text)}
-.quiz-opts{display:flex;flex-direction:column;gap:6px}
-.quiz-opt{text-align:left;padding:8px 11px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:500 .83rem 'Inter',sans-serif;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:8px}
-.quiz-opt:hover:not(:disabled){border-color:var(--accent);background:var(--surface-2)}
-.quiz-opt.correct{border-color:#10b981;background:rgba(16,185,129,.15);color:#10b981;font-weight:700}
-.quiz-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,.15);color:#ef4444}
-.quiz-exp{display:none;margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--surface);border-left:3px solid var(--accent);font-size:.8rem;color:var(--muted)}
-.quiz-exp.show{display:block}
-.written-ans{display:none;margin-top:8px;padding:10px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:.83rem}
-.written-ans.show{display:block}
-
-/* Modals (Download & API Key Setup) */
-.dl-modal-bg{position:fixed;inset:0;z-index:220;background:rgba(4,8,18,.68);backdrop-filter:blur(5px);display:none;place-items:center;padding:1rem}
-.dl-modal-bg.open{display:grid}
-.dl-modal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.35rem 1.45rem;max-width:440px;width:100%;box-shadow:var(--shadow)}
-.dl-modal h3{font-size:1.05rem;margin-bottom:.4rem;display:flex;align-items:center;gap:8px}
-.dl-modal p{font-size:.85rem;color:var(--muted);margin-bottom:1rem;line-height:1.5}
-.dl-modal input{width:100%;height:42px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:500 .86rem monospace;margin-bottom:1rem;outline:none}
-.dl-modal input:focus{border-color:var(--accent)}
-.dl-modal-acts{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
-@media(max-width:860px){.ai-drawer.split{width:100vw}.ai-drawer.split .ai-body{flex-direction:column}.ai-preview{max-height:36vh;border-right:0;border-bottom:1px solid var(--line)}}
+.ai-av{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:.78rem;flex:none;margin-top:2px}
+.ai-msg.bot .ai-av{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink)}
+.ai-msg.user .ai-av{background:var(--surface-2);color:var(--text);border:1px solid var(--line)}
+.ai-bub{padding:.75rem .95rem;border-radius:13px;font-size:.87rem;line-height:1.58;border:1px solid var(--line);background:var(--surface);color:var(--text);overflow-wrap:anywhere}
+.ai-msg.user .ai-bub{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);border-color:transparent;font-weight:600}
+.ai-bub h3,.ai-bub h4{margin:.5rem 0 .25rem;font-size:.95rem;color:var(--accent)}
+.ai-bub ul,.ai-bub ol{padding-left:1.2rem;margin:.35rem 0}
+.ai-bub li{margin:.22rem 0}
+.ai-bub code{font-family:monospace;font-size:.82em;background:var(--surface-2);padding:2px 5px;border-radius:5px;border:1px solid var(--line)}
+.ai-bub pre{background:var(--surface-2);padding:.65rem;border-radius:8px;overflow-x:auto;margin:.45rem 0;border:1px solid var(--line)}
+.ai-bub pre code{background:none;border:0;padding:0}
+.ai-bub p+p{margin-top:.45rem}
+/* Interactive Quiz & Written Practice Card inside Chat */
+.qcard{margin-top:.55rem;padding:.75rem;border-radius:11px;border:1px solid var(--line);background:var(--surface-2)}
+.qcard b.qtitle{display:block;font-size:.86rem;margin-bottom:.5rem;color:var(--text)}
+.qopts{display:flex;flex-direction:column;gap:6px}
+.qopt{text-align:left;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:500 .81rem 'Inter',sans-serif;cursor:pointer;transition:all .15s}
+.qopt:hover:not(:disabled){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.qopt.correct{border-color:#10b981;background:rgba(16,185,129,.18);color:#6ee7b7;font-weight:700}
+.qopt.wrong{border-color:#ef4444;background:rgba(239,68,68,.18);color:#fca5a5}
+.qexp{display:none;margin-top:.5rem;padding:.5rem .65rem;border-radius:8px;background:color-mix(in srgb,var(--accent) 10%,var(--surface));font-size:.79rem;color:var(--text);border-left:3px solid var(--accent)}
+.qexp.show{display:block}
+.wans-btn{margin-top:.45rem;font-size:.76rem}
+.ai-foot{padding:.75rem 1rem;border-top:1px solid var(--line);background:var(--surface);display:flex;gap:8px;align-items:flex-end}
+.ai-foot textarea{flex:1;min-height:42px;max-height:120px;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font:500 .88rem 'Inter',sans-serif;resize:none;outline:none}
+.ai-foot textarea:focus{border-color:var(--accent)}
+.ai-typing{display:inline-flex;align-items:center;gap:5px;padding:4px 2px}
+.ai-typing i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ait 1.2s infinite ease-in-out}
+.ai-typing i:nth-child(2){animation-delay:.15s}.ai-typing i:nth-child(3){animation-delay:.3s}
+@keyframes ait{0%,80%,100%{transform:scale(.6);opacity:.45}40%{transform:scale(1.1);opacity:1}}
+@media(max-width:860px){.ai-drawer.split{width:100vw}.ai-drawer.split .ai-body{grid-template-columns:1fr}.ai-drawer.split .ai-preview{display:none}}
 </style>
 </head>
 <body class="loading">
@@ -368,7 +330,7 @@ footer .wrap{display:block}
   <div class="nav-links">
     <a class="btn hide-sm" href="#drive"><i class="fa-brands fa-google-drive"></i> Live folders</a>
     <a class="btn hide-sm" href="#materials"><i class="fa-solid fa-book-open"></i> Materials</a>
-    <button class="btn ai-btn" id="openAiBtn" title="Open Gemini AI Study Assistant"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Ask AI</span></button>
+    <button class="btn ai-btn" id="navAiBtn" title="Open Gemini AI Study Assistant"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Ask AI</span></button>
     <div class="swatches" role="group" aria-label="Accent color"><button class="sw" data-acc="ocean" style="--a:#7dd3fc;--b:#a5b4fc" aria-label="Ocean color"></button><button class="sw" data-acc="emerald" style="--a:#6ee7b7;--b:#67e8f9" aria-label="Emerald color"></button><button class="sw" data-acc="violet" style="--a:#c4b5fd;--b:#f0abfc" aria-label="Violet color"></button><button class="sw" data-acc="sunset" style="--a:#fdba74;--b:#fda4af" aria-label="Sunset color"></button></div>
     <button class="btn icon" id="theme" aria-label="Toggle light and dark theme"><i class="fa-solid fa-moon"></i></button>
   </div>
@@ -377,10 +339,10 @@ footer .wrap{display:block}
 <header class="hero" id="top"><div class="wrap">
   <div class="live"><span class="dot"></span> <span id="liveTxt">Study material library</span></div>
   <h1>Fall 26 study materials for <em>Section 68_F</em></h1>
-  <p>Slides, books, lab manuals and exam questions for every course, in one searchable place — now powered by Gemini AI for instant PDF/PPTX reading & interactive exam practice.</p>
+  <p>Slides, books, lab manuals and exam questions for every course, in one searchable place — now powered by Gemini AI for instant PDF/PPTX summaries &amp; interactive exam practice.</p>
   <div class="cta">
     <a class="btn primary lg" href="#materials"><i class="fa-solid fa-book-open"></i> Browse materials</a>
-    <button class="btn ai-btn lg" id="heroAiBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Study & Exam Practice</button>
+    <button class="btn ai-btn lg" id="heroAiBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Study Assistant</button>
     <a class="btn lg" href="#drive"><i class="fa-brands fa-google-drive"></i> Open live folders</a>
   </div>
   <div class="ov" id="overview"></div>
@@ -400,8 +362,7 @@ footer .wrap{display:block}
     <div class="acts"><a class="btn lg" href="https://drive.google.com/drive/folders/1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open folder</a>
     <button class="btn primary lg" id="dlAll"><i class="fa-solid fa-download"></i> Download all files</button></div>
   </section>
-  <p class="dlnote" style="margin-top:.7rem">Download all saves each indexed file one after another. If your browser asks, allow multiple downloads for this site.</p>
-  
+  <p class="dlnote" style="margin-top:.7rem">Tip: Click the <b><i class="fa-solid fa-wand-magic-sparkles"></i> AI</b> button on any PDF or Slide card to read, summarize, or practice Mid/Final questions with Gemini AI.</p>
 
   <div class="bar" id="materials"><h2>Study materials<small id="count"></small></h2>
     <div class="tools"><button class="btn sm icon" id="syncBtn" hidden aria-label="Refresh from Drive" title="Refresh from Drive"><i class="fa-solid fa-rotate"></i></button><select id="typeSel" aria-label="Filter by file type"></select><select id="sort" aria-label="Sort files"><option value="def">Course order</option><option value="az">Name A to Z</option></select>
@@ -424,102 +385,82 @@ footer .wrap{display:block}
   </section>
 </main>
 
-<!-- Slide-Over Gemini AI Study Assistant Drawer -->
+<!-- Floating AI Button & Slide-over Study Assistant Drawer -->
+<button class="ai-fab" id="aiFab" aria-label="Open Gemini AI Study Assistant"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Ask Gemini AI</span></button>
 <div class="ai-backdrop" id="aiBackdrop"></div>
 <aside class="ai-drawer" id="aiDrawer" aria-label="Gemini AI Study Assistant">
   <div class="ai-head">
     <div class="ai-brand">
-      <div class="ai-spark"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-      <div>
+      <div class="ai-badge"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="ai-title">
         <b>Gemini AI Study Assistant</b>
-        <small id="aiDocSubtitle">DIU CSE 68_F · Select any PDF/PPTX or practice for exams</small>
+        <small id="aiSubTitle">DIU CSE 68_F · Select any PDF/Slide or ask a question</small>
       </div>
     </div>
-    <div class="ai-head-acts">
-      <button class="btn sm" id="aiKeyBtn" title="Configure Gemini API Key"><i class="fa-solid fa-key"></i> <span class="hide-sm">API Key</span></button>
-      <button class="btn sm" id="aiSplitBtn" title="Toggle side-by-side Document Reader"><i class="fa-solid fa-columns"></i> <span class="hide-sm">Split View</span></button>
-      <button class="btn sm icon" id="aiClearBtn" title="Clear conversation" aria-label="Clear conversation"><i class="fa-solid fa-trash-can"></i></button>
-      <button class="btn sm icon" id="aiCloseBtn" title="Close AI Assistant" aria-label="Close AI Assistant"><i class="fa-solid fa-xmark"></i></button>
+    <div class="row">
+      <button class="btn sm" id="aiKeyBtn" title="Set or update Gemini API Key"><i class="fa-solid fa-key"></i> <span class="hide-sm">API Key</span></button>
+      <button class="btn sm hide-sm" id="aiSplitBtn" title="Toggle Side-by-Side Document Preview"><i class="fa-solid fa-table-columns"></i> Split View</button>
+      <button class="btn sm icon" id="aiClearBtn" title="Clear Chat"><i class="fa-solid fa-trash-can"></i></button>
+      <button class="btn sm icon" id="aiCloseBtn" aria-label="Close AI Assistant"><i class="fa-solid fa-xmark"></i></button>
     </div>
   </div>
-
+  <!-- Custom API Key Bar -->
+  <div class="ai-keybar" id="aiKeyBar">
+    <span><i class="fa-solid fa-shield-halved"></i> Gemini API Key:</span>
+    <input type="password" id="aiKeyInput" placeholder="Paste your Google AI Studio key..." autocomplete="off">
+    <button class="btn sm primary" id="aiKeySave">Save Key</button>
+    <a class="btn sm" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Get Free Key <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  </div>
   <div class="ai-body">
-    <!-- Optional Split-Screen Google Drive PDF/PPTX Preview -->
-    <div class="ai-preview" id="aiPreviewPane">
-      <div class="ai-preview-bar">
-        <span id="aiPreviewLabel"><i class="fa-regular fa-file-lines"></i> Document Preview</span>
-        <a id="aiPreviewExt" href="#" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600">Open in New Tab <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <div class="ai-preview">
+      <div class="ai-prev-bar">
+        <span id="aiPrevLabel"><i class="fa-regular fa-file-pdf"></i> Document Preview</span>
+        <a id="aiPrevOpen" href="https://drive.google.com/drive/folders/1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600">Open in New Tab <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
-      <iframe id="aiPreviewFrame" title="Document Preview"></iframe>
+      <iframe class="ai-prev-frame" id="aiPrevFrame" title="Document Preview"></iframe>
     </div>
-
-    <!-- Main Chat Column -->
     <div class="ai-chat-col">
-      <div class="ai-ctx-bar">
-        <div class="ai-status" id="aiStatusPill">
-          <i class="fa-solid fa-circle-check ok"></i>
-          <span>Ready · All 68_F Courses Indexed</span>
-        </div>
-        <div class="ai-ctx-actions">
-          <input type="file" id="aiFileInput" accept=".pdf,.pptx,application/pdf" hidden>
-          <button class="btn sm" id="aiUploadBtn" title="Attach a downloaded PDF from your device"><i class="fa-solid fa-paperclip"></i> Attach PDF</button>
+      <div class="ai-docbar">
+        <div class="ai-docstatus" id="aiDocStatus"><i class="fa-solid fa-circle-check"></i> <span>Ready · All 68_F Courses Indexed</span></div>
+        <div class="row">
+          <input type="file" id="aiPdfUpload" accept=".pdf,.pptx,.txt" hidden>
+          <button class="btn sm" id="aiUploadBtn" title="Upload a local PDF or PPTX from your device"><i class="fa-solid fa-paperclip"></i> Attach File</button>
         </div>
       </div>
-
-      <!-- One-Click Study & Exam Practice Chips -->
-      <div class="ai-prompts" id="aiQuickPrompts">
-        <button class="ai-chip quiz-chip" id="btnGenMcq"><i class="fa-solid fa-bullseye"></i> Interactive MCQ Quiz</button>
-        <button class="ai-chip quiz-chip" id="btnGenWritten"><i class="fa-solid fa-pen-clip"></i> Mid/Final Written Practice</button>
-        <button class="ai-chip" data-prompt="এই পিডিএফ বা স্লাইডটির প্রতিটি টপিক একদম সহজ বাংলায় উদাহরণসহ আমাকে বুঝিয়ে দাও যাতে পরীক্ষায় সহজে লিখতে পারি।"><i class="fa-solid fa-language"></i> সহজ বাংলায় বোঝাও</button>
-        <button class="ai-chip" data-prompt="Summarize this lecture/document clearly with key takeaways, bullet points, and important exam topics."><i class="fa-solid fa-bolt"></i> Summarize Lecture</button>
-        <button class="ai-chip" data-prompt="List all key definitions, formulas, truth tables, or diagrams from this material so I can revise before the exam."><i class="fa-solid fa-list-check"></i> Key Formulas & Definitions</button>
+      <div class="ai-prompts" id="aiPrompts">
+        <button class="ai-pchip quiz-chip" data-quiz="mcq"><i class="fa-solid fa-bullseye"></i> Interactive MCQ Quiz</button>
+        <button class="ai-pchip quiz-chip" data-quiz="written"><i class="fa-solid fa-pen-clip"></i> Mid/Final Written Practice</button>
+        <button class="ai-pchip" data-p="এই পিডিএফ বা স্লাইডটি একদম সহজ বাংলায় উদাহরণসহ আমাকে বুঝিয়ে দাও যাতে পরীক্ষায় সহজে লিখতে পারি।"><i class="fa-solid fa-language"></i> সহজ বাংলায় বোঝাও</button>
+        <button class="ai-pchip" data-p="Summarize this lecture document into clear, high-yield bullet points for quick exam revision."><i class="fa-solid fa-bolt"></i> Summarize Lecture</button>
+        <button class="ai-pchip" data-p="List all important definitions, formulas, truth tables, or state diagrams mentioned in this material."><i class="fa-solid fa-list-check"></i> Key Formulas &amp; Definitions</button>
       </div>
-
-      <!-- Messages List -->
-      <div class="ai-msgs" id="aiMsgs"></div>
-
-      <!-- Input Box -->
+      <div class="ai-msgs" id="aiMsgs">
+        <div class="ai-msg bot">
+          <div class="ai-av"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="ai-bub">
+            <b>Assalamu Alaikum! 👋 Ami Section 68_F-er Gemini AI Study Assistant.</b>
+            <p>Apni jekono course-er PDF ba PPTX slide-er pashe thaka <b><i class="fa-solid fa-wand-magic-sparkles"></i> AI</b> button-e click kore:</p>
+            <ul>
+              <li>🎯 <b>Interactive MCQ Quiz</b> খেলে সাথে সাথে প্রস্তুতি যাচাই করতে পারবেন</li>
+              <li>📝 <b>Mid / Final Written Practice</b> করে মডেল উত্তর দেখে নিতে পারবেন</li>
+              <li>📖 <b>সহজ বাংলায় (Easy Bangla)</b> যেকোনো জটিল স্লাইড বা পিডিএফ বুঝে নিতে পারবেন!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <form class="ai-foot" id="aiForm">
-        <div class="ai-input-wrap">
-          <textarea id="aiInput" rows="1" placeholder="Ask anything about this PDF/PPTX in English, বাংলা, or Banglish..."></textarea>
-          <button type="submit" class="btn primary" id="aiSendBtn"><i class="fa-solid fa-paper-plane"></i> Send</button>
-        </div>
+        <textarea id="aiInput" rows="1" placeholder="Ask anything about this PDF/PPTX in English, বাংলা, or Banglish..."></textarea>
+        <button type="submit" class="btn primary" id="aiSendBtn"><i class="fa-solid fa-paper-plane"></i> Send</button>
       </form>
     </div>
   </div>
 </aside>
 
-<!-- Custom Non-Blocking Modal for Bulk Downloads -->
-<div class="dl-modal-bg" id="dlModalBg" role="dialog" aria-modal="true">
-  <div class="dl-modal">
-    <h3 id="dlModalTitle"><i class="fa-solid fa-download"></i> Download files?</h3>
-    <p id="dlModalDesc">Large books may take a while to download.</p>
-    <div class="dl-modal-acts">
-      <button class="btn sm" id="dlCancelBtn">Cancel</button>
-      <button class="btn sm primary" id="dlConfirmBtn"><i class="fa-solid fa-download"></i> Start Download</button>
-    </div>
-  </div>
-</div>
-
-<!-- Custom Modal for Gemini API Key Setup on GitHub Pages -->
-<div class="dl-modal-bg" id="keyModalBg" role="dialog" aria-modal="true">
-  <div class="dl-modal">
-    <h3><i class="fa-solid fa-key" style="color:var(--accent)"></i> Gemini API Key Setup</h3>
-    <p>GitHub Pages-এ নিরবচ্ছিন্নভাবে AI ব্যবহারের জন্য আপনার Google AI Studio-এর API Key (`AIzaSy...` বা `AQ...`) নিচে পেস্ট করুন। ফ্রি Key পেতে <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">Google AI Studio</a>-তে যান।</p>
-    <input type="text" id="customKeyInput" placeholder="Paste Gemini API Key here (e.g., AIzaSy...)" autocomplete="off">
-    <div class="dl-modal-acts">
-      <button class="btn sm" id="keyResetBtn" title="Reset to default embedded key">Reset Default</button>
-      <button class="btn sm" id="keyCancelBtn">Close</button>
-      <button class="btn sm primary" id="keySaveBtn"><i class="fa-solid fa-check"></i> Save Key</button>
-    </div>
-  </div>
-</div>
-
 <footer><div class="wrap"><div class="fgrid">
 <div><b style="color:var(--text)">68_F Study Portal</b><p style="margin-top:.5rem;max-width:42ch">Course slides, reference books, lab manuals and exam questions for Section 68_F, collected in one place and synced with Google Drive.</p></div>
 <div><h4>Courses</h4><div id="fCourses"></div></div>
 <div><h4>Quick links</h4><a href="#drive">Live Drive folders</a><a href="#materials">Study materials</a><a href="https://drive.google.com/drive/folders/1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A" target="_blank" rel="noopener">Main Drive folder</a></div></div>
-<div class="legal"><span>Built by Parves Hasan, Department of CSE, Daffodil International University <span class="ver">Version 2.3 · AI & Exam Mode</span></span><span class="soc"><span>Fall 2026. For student use only. <span id="visits" style="margin-left:.4rem"></span></span><a class="soc-i" href="https://www.facebook.com/share/19i4PgqFoe/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a class="soc-i" href="https://www.linkedin.com/in/parves-hasan-bbb662327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></span></div></div></footer>
+<div class="legal"><span>Built by Parves Hasan, Department of CSE, Daffodil International University <span class="ver">Version 2.4 · Gemini AI</span></span><span class="soc"><span>Fall 2026. For student use only. <span id="visits" style="margin-left:.4rem"></span></span><a class="soc-i" href="https://www.facebook.com/share/19i4PgqFoe/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a class="soc-i" href="https://www.linkedin.com/in/parves-hasan-bbb662327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></span></div></div></footer>
 <button class="btn icon primary top-btn" id="topBtn" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 <div class="toast" id="toast" role="status"></div>
 
@@ -570,16 +511,10 @@ F("Full Lab Report (Experiments 1 - 8)","Lab Report","PDF","pdf","1psKUpRnYjaZZ9
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// Optional ZIP files: upload a ZIP to Drive (share: anyone with the link) and paste its link or file ID here.
 const ZIPS={all:"",CSE223:"",CSE225:"",CSE227:"",CSE228:"",CSE224:""};
 const zipId=k=>((ZIPS[k]||'').match(/[-\w]{25,}/)||[])[0];
 const zipGo=id=>{const fr=document.createElement('iframe');fr.style.display='none';fr.src='https://drive.google.com/uc?export=download&id='+id;document.body.appendChild(fr);setTimeout(()=>fr.remove(),90000);toast('ZIP download started')};
-
-// AUTO-SYNC GOOGLE DRIVE API KEY
 const DRIVE_API_KEY="AIzaSyAvO28NMn5eW9-w1pLoNEe519Rad-zRy7I";
-// GEMINI API KEY (Supports embedded key, localStorage override, and automatic fallback)
-const DEFAULT_GEMINI_KEY="AQ.Ab8RN6IBUJuDrHIOHyNbL9rEEMtTMCgvydMnDWPis3Va7Img2g";
-
 const fmatch=(f,l)=>f.path?f.path.includes(l):f.category===l||f.name.startsWith(l)||(l==="Reference Books"&&f.category==="Book")||(l==="Practice PDF"&&f.category==="Practice");
 const state={nav:{},sub:{},course:'all',type:'all',q:'',view:'list',sort:'def',layout:'cards',folder:folderMap.all[0].id};
 const kindOf=f=>{const c=f.icon.split(' ')[1]||'';return c.replace('icon-','')};
@@ -660,62 +595,28 @@ function render(){
     if(state.sort==='az')files.sort((a,b)=>a.name.localeCompare(b.name));
     if(!files.length&&!sl&&!tree)return;total+=files.length+(sl||tree?1:0);
     html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download this whole course"><i class="fa-solid ${zipId(c.code)?'fa-file-zipper':'fa-download'}"></i> <span class="hide-sm">${zipId(c.code)?'Download ZIP':'Download course'}</span></button></div>${tree?treeHTML(c,cur,nav):subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
-    files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm ai-btn" data-ai="${esc(f.url)}" data-name="${esc(f.name)}" data-course="${c.code} - ${esc(c.title)}" data-cat="${esc(f.category)}" data-type="${esc(f.type)}" title="Read & Practice with Gemini AI"><i class="fa-solid fa-wand-magic-sparkles"></i> AI</button><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':tree?(cur.folders.length?'':'<div class="pl-empty" style="grid-column:1/-1">This folder is empty.</div>'):`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
+    files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm ai-btn" data-ai="${esc(f.url)}" data-name="${esc(f.name)}" data-course="${c.code} · ${esc(c.title)}" data-cat="${esc(f.category)}" data-type="${esc(f.type)}" title="Read & Practice with Gemini AI"><i class="fa-solid fa-wand-magic-sparkles"></i> AI</button><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':tree?(cur.folders.length?'':'<div class="pl-empty" style="grid-column:1/-1">This folder is empty.</div>'):`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
   });
   $('count').textContent=total+(total===1?' file':' files');
   $('out').innerHTML=total?html:`<div class="empty"><i class="fa-regular fa-folder-open"></i><b>No files match${q?` “${esc(q)}”`:''}</b>Try a shorter keyword, or clear the filters.<br><br><button class="btn" id="reset">Clear filters</button></div>`;
   const r=$('reset');if(r)r.onclick=()=>{state.q='';state.type='all';state.course='all';$('q').value='';$('typeSel').value='all';buildRails();buildFolders();render()};
 }
 const fid=u=>(u.match(/\/d\/([^/]+)/)||[])[1];
-
-// Non-blocking download modal logic
-let pendingDlFiles=[], pendingDlLabel='';
-function startBatchDl(files){
+function dl(files,label){
+  if(!files.length)return;
+  if(!confirm(`Download ${files.length} file${files.length>1?'s':''}${label?' from '+label:''}? Large books may take a while.`))return;
   let i=0;(function next(){
     if(i>=files.length){toast('All downloads started');return}
     const f=files[i++],fr=document.createElement('iframe');fr.style.display='none';
     fr.src='https://drive.google.com/uc?export=download&id='+fid(f.url);document.body.appendChild(fr);
     setTimeout(()=>fr.remove(),90000);toast(`Downloading ${i} of ${files.length}`);setTimeout(next,1500)})();
 }
-function dl(files,label){
-  if(!files.length)return;
-  if(files.length===1){startBatchDl(files);return}
-  pendingDlFiles=files;pendingDlLabel=label||'';
-  $('dlModalTitle').innerHTML=`<i class="fa-solid fa-download"></i> Download ${files.length} files${label?' from '+esc(label):''}?`;
-  $('dlModalDesc').textContent='Each file will download one after another. Large books may take a moment.';
-  $('dlModalBg').classList.add('open');
-}
-$('dlCancelBtn').onclick=()=>$('dlModalBg').classList.remove('open');
-$('dlConfirmBtn').onclick=()=>{$('dlModalBg').classList.remove('open');startBatchDl(pendingDlFiles)};
-
 $('dlAll').onclick=()=>zipId('all')?zipGo(zipId('all')):dl(allFiles,'68_F Study Material');
 if(zipId('all'))$('dlAll').innerHTML='<i class="fa-solid fa-file-zipper"></i> Download ZIP';
 $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
-
-function copyLinkText(text){
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(()=>toast('Link copied')).catch(()=>fallbackCopy(text));
-  }else{fallbackCopy(text)}
-}
-function fallbackCopy(text){
-  const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');toast('Link copied')}catch(e){toast('Copy failed, use Open instead')}
-  ta.remove();
-}
-
 $('out').onclick=e=>{
-  const aiBtn=e.target.closest('[data-ai]');
-  if(aiBtn){
-    openAiWithFile({
-      url:aiBtn.dataset.ai,
-      name:aiBtn.dataset.name,
-      course:aiBtn.dataset.course,
-      category:aiBtn.dataset.cat,
-      type:aiBtn.dataset.type
-    });
-    return;
-  }
+  const ai=e.target.closest('[data-ai]');
+  if(ai){openAiWithFile({url:ai.dataset.ai,name:ai.dataset.name,course:ai.dataset.course,category:ai.dataset.cat,type:ai.dataset.type});return}
   const nv=e.target.closest('[data-nav]');
   if(nv){const [code,id]=nv.dataset.nav.split('|');(state.nav[code]=state.nav[code]||[]).push(id);render();return}
   const up=e.target.closest('[data-up]');
@@ -732,8 +633,7 @@ $('out').onclick=e=>{
   const one=e.target.closest('[data-dl]');if(one){dl([{url:one.dataset.dl}]);return}
   const dc=e.target.closest('[data-dlc]');if(dc){if(zipId(dc.dataset.dlc)){zipGo(zipId(dc.dataset.dlc));return}const c=coursesData.find(x=>x.code===dc.dataset.dlc);dl(c.files,c.code);return}
   const b=e.target.closest('[data-copy]');if(!b)return;
-  copyLinkText(b.dataset.copy);
-};
+  (navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(()=>toast('Link copied')).catch(()=>toast('Copy failed, use Open instead'))};
 let tm;$('q').addEventListener('input',e=>{clearTimeout(tm);tm=setTimeout(()=>{state.q=e.target.value;render()},120)});
 document.addEventListener('keydown',e=>{
   if(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();$('q').focus()}
@@ -788,500 +688,379 @@ function applyDrive(data){
   buildOverview();buildStats();buildRails();buildFolders();render();
   $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
 }
-document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card,.ov button');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
-fetch('https://parveshasan.goatcounter.com/counter//TOTAL.json').then(r=>r.ok?r.json():Promise.reject()).then(j=>{$('visits').textContent='· '+j.count+' visits'}).catch(()=>{});
 
-/* ===== Gemini AI Study Assistant + PPTX/PDF Reader + Exam Practice Mode ===== */
+/* ============================================================================
+   GEMINI AI STUDY ASSISTANT (PDF & PPTX Reader + Interactive Quiz & Written)
+   ============================================================================ */
+// Empty default key so GitHub Secret Scanning never blocks your commit!
+// Set your key directly in the website UI via the "API Key" button.
+const DEFAULT_GEMINI_KEY = "";
+const apiKey = ""; 
+
 if(window.pdfjsLib){
   pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 }
 
 const aiState={
+  open:false,
+  split:false,
   activeFile:null,
   extractedText:'',
-  inlinePdfBase64:null,
   history:[],
   busy:false
 };
 
-function getSavedGeminiKey(){
-  try{return (localStorage.getItem('gemini_key_68f')||'').trim()}catch(e){return ''}
+function getSavedKey(){
+  try{return localStorage.getItem('gemini_key_68f')||''}catch(e){return ''}
+}
+function saveUserKey(k){
+  try{if(k)localStorage.setItem('gemini_key_68f',k.trim());else localStorage.removeItem('gemini_key_68f')}catch(e){}
 }
 
-// API Key Modal Handlers
 $('aiKeyBtn').onclick=()=>{
-  $('customKeyInput').value=getSavedGeminiKey()||DEFAULT_GEMINI_KEY;
-  $('keyModalBg').classList.add('open');
-};
-$('keyCancelBtn').onclick=()=>$('keyModalBg').classList.remove('open');
-$('keyResetBtn').onclick=()=>{
-  try{localStorage.removeItem('gemini_key_68f')}catch(e){}
-  $('customKeyInput').value=DEFAULT_GEMINI_KEY;
-  toast('Reset to default key');
-};
-$('keySaveBtn').onclick=()=>{
-  const v=$('customKeyInput').value.trim();
-  if(v){
-    try{localStorage.setItem('gemini_key_68f',v)}catch(e){}
-    toast('Gemini API Key saved!');
+  const bar=$('aiKeyBar');
+  bar.classList.toggle('show');
+  if(bar.classList.contains('show')){
+    $('aiKeyInput').value=getSavedKey();
+    $('aiKeyInput').focus();
   }
-  $('keyModalBg').classList.remove('open');
+};
+$('aiKeySave').onclick=()=>{
+  const val=$('aiKeyInput').value.trim();
+  saveUserKey(val);
+  $('aiKeyBar').classList.remove('show');
+  toast(val?'Gemini API Key saved in browser!':'Reverted to default key');
+};
+
+function setAiDrawer(open){
+  aiState.open=open;
+  $('aiDrawer').classList.toggle('open',open);
+  $('aiBackdrop').classList.toggle('open',open);
+  if(open)setTimeout(()=>$('aiInput').focus(),220);
+}
+$('navAiBtn').onclick=()=>setAiDrawer(true);
+$('heroAiBtn').onclick=()=>setAiDrawer(true);
+$('aiFab').onclick=()=>setAiDrawer(true);
+$('aiCloseBtn').onclick=()=>setAiDrawer(false);
+$('aiBackdrop').onclick=()=>setAiDrawer(false);
+
+$('aiSplitBtn').onclick=()=>{
+  aiState.split=!aiState.split;
+  $('aiDrawer').classList.toggle('split',aiState.split);
+  $('aiSplitBtn').classList.toggle('primary',aiState.split);
+};
+
+$('aiClearBtn').onclick=()=>{
+  aiState.history=[];
+  $('aiMsgs').innerHTML=`<div class="ai-msg bot"><div class="ai-av"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div class="ai-bub"><b>Chat cleared!</b> ${aiState.activeFile?`Still reading <b>${esc(aiState.activeFile.name)}</b>. Ask any question or click <b>Interactive MCQ Quiz</b> above!`:'Select any course PDF/PPTX or ask a question below.'}</div></div>`;
+};
+
+async function extractPdfTextFromBuffer(buf){
+  if(!window.pdfjsLib)throw new Error('PDF.js not loaded');
+  const pdf=await pdfjsLib.getDocument({data:buf}).promise;
+  const maxPages=Math.min(pdf.numPages,30);
+  let out=[];
+  for(let p=1;p<=maxPages;p++){
+    const page=await pdf.getPage(p);
+    const tc=await page.getTextContent();
+    const pageStr=tc.items.map(i=>i.str).join(' ').replace(/\s+/g,' ').trim();
+    if(pageStr)out.push(`[Page ${p}] ${pageStr}`);
+  }
+  return out.join('\n\n').slice(0,48000);
+}
+
+async function extractPptxTextFromBuffer(buf){
+  if(!window.JSZip)throw new Error('JSZip not loaded');
+  const zip=await JSZip.loadAsync(buf);
+  const slideFiles=Object.keys(zip.files).filter(k=>/^ppt\/slides\/slide\d+\.xml$/i.test(k));
+  slideFiles.sort((a,b)=>natural(a,b));
+  let out=[];
+  for(let i=0;i<slideFiles.length;i++){
+    const xml=await zip.files[slideFiles[i]].async('string');
+    const matches=[...xml.matchAll(/<a:t>([\s\S]*?)<\/a:t>/g)].map(m=>m[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
+    const txt=matches.join(' ').replace(/\s+/g,' ').trim();
+    if(txt)out.push(`[Slide ${i+1}] ${txt}`);
+  }
+  return out.join('\n\n').slice(0,48000);
+}
+
+async function openAiWithFile(file){
+  aiState.activeFile=file;
+  aiState.extractedText='';
+  aiState.history=[];
+  setAiDrawer(true);
+
+  if(innerWidth>860){
+    aiState.split=true;
+    $('aiDrawer').classList.add('split');
+    $('aiSplitBtn').classList.add('primary');
+  }
+
+  const id=fid(file.url);
+  $('aiSubTitle').textContent=`${file.course} · ${file.name}`;
+  $('aiPrevLabel').innerHTML=`<i class="fa-regular fa-file-lines"></i> ${esc(file.name)}`;
+  $('aiPrevOpen').href=file.url;
+  if(id){
+    $('aiPrevFrame').src=`https://drive.google.com/file/d/${id}/preview`;
+  }
+
+  const st=$('aiDocStatus');
+  st.innerHTML=`<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Reading ${esc(file.type)} from Google Drive...</span>`;
+
+  appendAiMsg('bot',`📄 <b>Selected Material:</b> ${esc(file.name)}\n<b>Course:</b> ${esc(file.course)} (${esc(file.category)} · ${esc(file.type)})\n\n*উপরের <b>Interactive MCQ Quiz</b>, <b>Mid/Final Written Practice</b> বা <b>সহজ বাংলায় বোঝাও</b> বাটনে ক্লিক করুন অথবা আপনার প্রশ্ন লিখুন!*`);
+
+  if(id&&DRIVE_API_KEY){
+    try{
+      const r=await fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media&key=${DRIVE_API_KEY}`);
+      if(!r.ok)throw new Error('Drive stream '+r.status);
+      const buf=await r.arrayBuffer();
+      const head=new Uint8Array(buf.slice(0,4));
+      const isZip=head[0]===0x50&&head[1]===0x4B;
+      let txt='';
+      if(/PPT/i.test(file.type)||isZip){
+        txt=await extractPptxTextFromBuffer(buf);
+      }else{
+        txt=await extractPdfTextFromBuffer(buf);
+      }
+      if(txt&&txt.length>30){
+        aiState.extractedText=txt;
+        st.innerHTML=`<i class="fa-solid fa-bolt"></i> <span>Loaded full ${esc(file.type)} text (${Math.round(txt.length/1000)}k chars) · Ready!</span>`;
+      }else{
+        st.innerHTML=`<i class="fa-solid fa-eye"></i> <span>Scanned/Image ${esc(file.type)} · Using course context</span>`;
+      }
+    }catch(err){
+      st.innerHTML=`<i class="fa-solid fa-circle-info"></i> <span>Loaded ${esc(file.type)} Context · Ready to explain &amp; quiz</span>`;
+    }
+  }else{
+    st.innerHTML=`<i class="fa-solid fa-circle-check"></i> <span>Selected: ${esc(file.name)}</span>`;
+  }
+}
+
+$('aiUploadBtn').onclick=()=>$('aiPdfUpload').click();
+$('aiPdfUpload').onchange=async e=>{
+  const f=e.target.files&&e.target.files[0];
+  if(!f)return;
+  const st=$('aiDocStatus');
+  st.innerHTML=`<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Extracting text from ${esc(f.name)}...</span>`;
+  try{
+    const buf=await f.arrayBuffer();
+    const isPptx=/\.pptx$/i.test(f.name);
+    const txt=isPptx?await extractPptxTextFromBuffer(buf):await extractPdfTextFromBuffer(buf);
+    aiState.activeFile={name:f.name,course:'Uploaded Local File',category:'Custom File',type:isPptx?'PPTX':'PDF',url:'#'};
+    aiState.extractedText=txt;
+    $('aiSubTitle').textContent=`Local File · ${f.name}`;
+    st.innerHTML=`<i class="fa-solid fa-circle-check"></i> <span>Attached: ${esc(f.name)} (${Math.round(txt.length/1000)}k chars)</span>`;
+    appendAiMsg('bot',`✅ <b>Attached File:</b> ${esc(f.name)}\nআপনার ফাইল থেকে টেক্সট লোড করা হয়েছে। এখন <b>Interactive MCQ Quiz</b> বা যেকোনো প্রশ্ন করতে পারেন!`);
+  }catch(err){
+    st.innerHTML=`<i class="fa-solid fa-triangle-exclamation"></i> <span>Could not parse file</span>`;
+    toast('Could not read file');
+  }
 };
 
 function formatAiMarkdown(md){
   let s=esc(md);
   s=s.replace(/```([\s\S]*?)```/g,(_,code)=>`<pre><code>${code.trim()}</code></pre>`);
   s=s.replace(/`([^`]+)`/g,'<code>$1</code>');
-  s=s.replace(/^###\s+(.*)$/gm,'<h4>$1</h4>');
-  s=s.replace(/^##\s+(.*)$/gm,'<h3>$1</h3>');
-  s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s=s.replace(/^### (.*)$/gm,'<h4>$1</h4>');
+  s=s.replace(/^## (.*)$/gm,'<h3>$1</h3>');
+  s=s.replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+  s=s.replace(/\*([^*]+)\*/g,'<em>$1</em>');
   s=s.replace(/^\s*[-*]\s+(.*)$/gm,'<li>$1</li>');
-  s=s.replace(/(<li>.*<\/li>\n?)+/g,m=>`<ul>${m}</ul>`);
-  return s.split(/\n{2,}/).map(p=>{
-    if(/^<(h3|h4|ul|pre)/.test(p.trim()))return p;
-    return `<p>${p.replace(/\n/g,'<br>')}</p>`;
-  }).join('');
+  s=s.replace(/(<li>.*<\/li>)/gs,'<ul>$1</ul>');
+  s=s.replace(/\n{2,}/g,'</p><p>');
+  s=s.replace(/\n/g,'<br>');
+  return `<p>${s}</p>`;
 }
 
-function appendAiMessage(role,text,isHtml=false){
+function appendAiMsg(role,text,rawHTML){
   const box=$('aiMsgs');
   const div=document.createElement('div');
   div.className=`ai-msg ${role}`;
-  const icon=role==='user'?'fa-user-graduate':'fa-wand-magic-sparkles';
-  div.innerHTML=`<div class="ai-avatar"><i class="fa-solid ${icon}"></i></div><div class="ai-bubble">${isHtml?text:formatAiMarkdown(text)}</div>`;
+  const icon=role==='bot'?'fa-wand-magic-sparkles':'fa-user-graduate';
+  div.innerHTML=`<div class="ai-av"><i class="fa-solid ${icon}"></i></div><div class="ai-bub">${rawHTML?text:(role==='bot'?formatAiMarkdown(text):esc(text).replace(/\n/g,'<br>'))}</div>`;
   box.appendChild(div);
   box.scrollTop=box.scrollHeight;
   return div;
 }
 
-function setAiStatus(type,msg){
-  const icon=type==='loading'?'fa-circle-notch fa-spin spin':type==='warn'?'fa-circle-info warn':'fa-circle-check ok';
-  $('aiStatusPill').innerHTML=`<i class="fa-solid ${icon}"></i><span>${esc(msg)}</span>`;
-}
-
-function openAiDrawer(){
-  $('aiBackdrop').classList.add('open');
-  $('aiDrawer').classList.add('open');
-  if(!$('aiMsgs').children.length){
-    appendAiMessage('model',`Assalamu Alaikum! 👋 Ami **Section 68_F**-er **Gemini AI Study Assistant**.\n\nApni jekono course-er **PDF** ba **PPTX Slide**-er pashe থাকা **AI** button-e click kore:
-- **🎯 Interactive MCQ Quiz** খেলে সাথে সাথে প্রস্তুতি যাচাই করতে পারবেন
-- **📝 Mid / Final Written Practice** করে মডেল উত্তর দেখে নিতে পারবেন
-- **সহজ বাংলায় (Easy Bangla)** যেকোনো জটিল স্লাইড বা পিডিএফ বুঝে নিতে পারবেন!`);
+async function callGeminiWithFallback(payload){
+  const candidateKeys=[getSavedKey(), apiKey, DEFAULT_GEMINI_KEY, DRIVE_API_KEY].filter(Boolean);
+  const uniqueKeys=[...new Set(candidateKeys)];
+  if(!uniqueKeys.length){
+    throw new Error('NO_KEY: অনুগ্রহ করে উপরের 🔑 API Key বাটনে ক্লিক করে আপনার Google AI Studio-এর কী-টি পেস্ট করে Save Key চাপুন।');
   }
-}
+  const models=['gemini-2.5-flash','gemini-2.0-flash','gemini-1.5-flash'];
+  let lastErr='No valid API key or model responded.';
 
-function closeAiDrawer(){
-  $('aiBackdrop').classList.remove('open');
-  $('aiDrawer').classList.remove('open');
-}
-
-$('openAiBtn').onclick=openAiDrawer;
-$('heroAiBtn').onclick=openAiDrawer;
-$('aiCloseBtn').onclick=closeAiDrawer;
-$('aiBackdrop').onclick=closeAiDrawer;
-
-$('aiSplitBtn').onclick=()=>{
-  const dr=$('aiDrawer');
-  dr.classList.toggle('split');
-  $('aiSplitBtn').classList.toggle('primary',dr.classList.contains('split'));
-};
-
-$('aiClearBtn').onclick=()=>{
-  aiState.history=[];
-  $('aiMsgs').innerHTML='';
-  toast('Chat cleared');
-  openAiDrawer();
-};
-
-// 1. Extract PDF text directly from Google Drive API using PDF.js
-async function extractDrivePdfText(fileId){
-  if(!window.pdfjsLib||!DRIVE_API_KEY)throw new Error('PDF.js unavailable');
-  const url=`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${DRIVE_API_KEY}`;
-  const res=await fetch(url);
-  if(!res.ok)throw new Error('HTTP '+res.status);
-  const buf=await res.arrayBuffer();
-  const pdf=await pdfjsLib.getDocument({data:buf}).promise;
-  const maxPages=Math.min(pdf.numPages,35);
-  let out='';
-  for(let p=1;p<=maxPages;p++){
-    const page=await pdf.getPage(p);
-    const tc=await page.getTextContent();
-    const pageStr=tc.items.map(it=>it.str).join(' ');
-    out+=`\n--- [Page ${p}] ---\n`+pageStr;
-  }
-  return {text:out.trim(),count:pdf.numPages,unit:'pages'};
-}
-
-// 2. Extract PPTX (PowerPoint) slide text directly from Google Drive API using JSZip!
-async function extractDrivePptxText(fileId){
-  if(!window.JSZip||!DRIVE_API_KEY)throw new Error('JSZip unavailable');
-  const url=`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${DRIVE_API_KEY}`;
-  const res=await fetch(url);
-  if(!res.ok)throw new Error('HTTP '+res.status);
-  const buf=await res.arrayBuffer();
-  const zip=await JSZip.loadAsync(buf);
-  const slideFiles=Object.keys(zip.files).filter(k=>/^ppt\/slides\/slide\d+\.xml$/i.test(k));
-  slideFiles.sort((a,b)=>{
-    const na=parseInt((a.match(/slide(\d+)\.xml/i)||[])[1]||0,10);
-    const nb=parseInt((b.match(/slide(\d+)\.xml/i)||[])[1]||0,10);
-    return na-nb;
-  });
-  let out='';
-  for(let i=0;i<slideFiles.length;i++){
-    const xmlStr=await zip.files[slideFiles[i]].async('text');
-    const matches=[...xmlStr.matchAll(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g)];
-    const slideTxt=matches.map(m=>m[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')).join(' ').trim();
-    if(slideTxt)out+=`\n--- [Slide ${i+1}] ---\n`+slideTxt;
-  }
-  return {text:out.trim(),count:slideFiles.length,unit:'slides'};
-}
-
-async function openAiWithFile(fileMeta){
-  aiState.activeFile=fileMeta;
-  aiState.extractedText='';
-  aiState.inlinePdfBase64=null;
-  const id=fid(fileMeta.url);
-
-  $('aiDocSubtitle').textContent=`${fileMeta.course} · ${fileMeta.name}`;
-  $('aiPreviewLabel').innerHTML=`<i class="fa-regular fa-file-lines"></i> ${esc(fileMeta.name)}`;
-  $('aiPreviewExt').href=fileMeta.url;
-  if(id){
-    $('aiPreviewFrame').src=`https://drive.google.com/file/d/${id}/preview`;
-    if(innerWidth>900){
-      $('aiDrawer').classList.add('split');
-      $('aiSplitBtn').classList.add('primary');
-    }
-  }
-
-  openAiDrawer();
-  appendAiMessage('model',`📄 **Selected Material:** ${fileMeta.name}\n**Course:** ${fileMeta.course} (${fileMeta.category} · ${fileMeta.type})\n\n*উপরের **Interactive MCQ Quiz**, **Mid/Final Written Practice**, অথবা **সহজ বাংলায় বোঝাও** বাটনে ক্লিক করুন!*`);
-
-  if(id&&/PDF/i.test(fileMeta.type)){
-    setAiStatus('loading','Reading PDF pages from Google Drive...');
-    try{
-      const res=await extractDrivePdfText(id);
-      if(res.text&&res.text.length>40){
-        aiState.extractedText=res.text.slice(0,48000);
-        setAiStatus('ok',`PDF Read Complete (${res.count} pages loaded)`);
-      }else{
-        setAiStatus('warn','Scanned PDF · Using Course Context (or Attach PDF)');
-      }
-    }catch(err){
-      setAiStatus('warn','Topic Context Ready · Click "Attach PDF" if needed');
-    }
-  }else if(id&&/PPTX/i.test(fileMeta.type)){
-    setAiStatus('loading','Extracting PowerPoint slides from Drive...');
-    try{
-      const res=await extractDrivePptxText(id);
-      if(res.text&&res.text.length>30){
-        aiState.extractedText=res.text.slice(0,48000);
-        setAiStatus('ok',`PPTX Read Complete (${res.count} slides extracted)`);
-      }else{
-        setAiStatus('ok',`Loaded ${fileMeta.type} Context · Ready to explain`);
-      }
-    }catch(err){
-      setAiStatus('ok',`Loaded ${fileMeta.type} Context · Ready to explain`);
-    }
-  }else{
-    setAiStatus('ok',`Loaded ${fileMeta.type} Context · Ready to explain`);
-  }
-}
-
-// Local PDF Upload Fallback
-$('aiUploadBtn').onclick=()=>$('aiFileInput').click();
-$('aiFileInput').onchange=e=>{
-  const file=e.target.files&&e.target.files[0];
-  if(!file)return;
-  if(file.size>18*1024*1024){toast('Please choose a file smaller than 18 MB');return}
-  setAiStatus('loading',`Attaching ${file.name}...`);
-  const reader=new FileReader();
-  reader.onload=()=>{
-    const base64=String(reader.result).split(',')[1];
-    aiState.inlinePdfBase64=base64;
-    aiState.activeFile={name:file.name,course:state.course==='all'?'DIU CSE 68_F':state.course,category:'Uploaded File',type:'PDF',url:'#'};
-    $('aiDocSubtitle').textContent=`Uploaded · ${file.name}`;
-    setAiStatus('ok',`Attached: ${file.name}`);
-    appendAiMessage('model',`📎 **Attached Local PDF:** ${file.name}\nএখন আপনি এই ফাইল থেকে কুইজ বা যেকোনো প্রশ্ন করতে পারেন!`);
-  };
-  reader.readAsDataURL(file);
-};
-
-function buildSystemInstruction(){
-  const courseCatalog=coursesData.map(c=>`${c.code} (${c.title}): ${c.files.map(f=>f.name).join(', ')}`).join('\n');
-  const activeInfo=aiState.activeFile
-    ? `Active Document: "${aiState.activeFile.name}" | Course: ${aiState.activeFile.course} | Category: ${aiState.activeFile.category} | Type: ${aiState.activeFile.type}`
-    : `Active Course Filter: ${state.course==='all'?'All 68_F Courses':state.course}\nFull 68_F Course Catalog:\n${courseCatalog}`;
-
-  return `You are the official Gemini AI Study Assistant for Section 68_F, Department of Computer Science and Engineering (CSE), Daffodil International University (DIU), Fall 2026 semester.
-Courses in this portal:
-- CSE223: Digital Logic Design (Number systems, Binary/Octal/Hex conversions, 1's & 2's complement, Boolean algebra, Logic gates, Universal gates NAND/NOR, Canonical SOP/POS, Minterms/Maxterms, K-Map simplification, Combinational & Sequential circuits)
-- CSE224: Digital Logic Design Lab (IC 7400, 7402, 7404, 7408, 7432, 7486 experiments, breadboard implementation, truth table verification)
-- CSE225: Data Communication (Data & information, Data representation ASCII/Unicode, Data flow Simplex/Half-Duplex/Full-Duplex, Network criteria, OSI & TCP/IP layered architecture, Analog & Digital signals, Periodic/Aperiodic, Sine wave parameters, Time & Frequency domain, Bandwidth, Digital transmission, Line coding Unipolar/Polar/Bipolar, NRZ/RZ/Manchester, Block coding, PCM, Modulation, Multiplexing, Forouzan & Stallings textbooks)
-- CSE227: Systems Analysis and Design (Data vs Information, System concepts, SDLC phases, Information gathering interviews/JAD/questionnaires, DFD Context/Level-0/Level-1 diagrams & rules, Feasibility analysis technical/economic/operational, NPV/ROI/Payback)
-- CSE228: Theory of Computation (Alphabets, Strings, Languages, Kleene closure, DFA formal definition & state diagrams, NFA, Subset construction NFA to DFA, Epsilon-NFA & ECLOSE, Regular Expressions, DFA minimization, Pumping Lemma, Context-Free Grammars, Hopcroft textbook)
-
-Current Context:
-${activeInfo}
-${aiState.extractedText ? `\n--- EXTRACTED DOCUMENT / SLIDE CONTENT ---\n${aiState.extractedText}\n--- END CONTENT ---` : ''}
-
-Instructions:
-1. Answer clearly, accurately, and in an exam-oriented, student-friendly manner based on the extracted slide/PDF content and DIU CSE syllabus.
-2. If the student asks in Bangla or Banglish, reply in natural, easy-to-understand Bangla (keeping technical CSE terms in English where helpful).
-3. Use clean headings (##), bullet points, and bold key terms so students can revise quickly.`;
-}
-
-// Multi-key & Multi-model resilient caller for both Canvas and GitHub Pages
-async function callGeminiRaw(payload){
-  const savedKey=getSavedGeminiKey();
-  // Candidate keys to try in order: user saved key -> embedded key -> Drive API key (if Generative Language API is enabled on same GCP project) -> empty key (for Canvas runtime injection)
-  const rawKeys=[savedKey, DEFAULT_GEMINI_KEY, DRIVE_API_KEY, ""].filter((v,i,a)=>a.indexOf(v)===i);
-  const models=['gemini-2.5-flash','gemini-1.5-flash','gemini-3-flash-preview'];
-
-  let lastErr=null;
-  for(const key of rawKeys){
-    // Skip empty key when hosted on external domain like github.io unless no other key exists
-    if(key==="" && /github\.io/i.test(location.hostname)) continue;
+  for(const key of uniqueKeys){
     for(const model of models){
       try{
-        const url=`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`+(key?`?key=${encodeURIComponent(key)}`:'');
-        const res=await fetch(url,{
+        const url=`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`;
+        const r=await fetch(url,{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify(payload)
         });
-        if(res.ok){
-          const j=await res.json();
-          const txt=j?.candidates?.[0]?.content?.parts?.[0]?.text;
-          if(txt)return txt;
+        if(r.ok){
+          const j=await r.json();
+          const ans=j.candidates?.[0]?.content?.parts?.[0]?.text;
+          if(ans)return ans;
         }else{
-          const errJson=await res.json().catch(()=>({}));
-          lastErr=errJson?.error?.message||(`HTTP ${res.status}`);
-          // If key itself is invalid (400/403), break inner model loop and try next key immediately
-          if(res.status===400||res.status===403)break;
+          const errJson=await r.json().catch(()=>({}));
+          lastErr=errJson.error?.message||`HTTP ${r.status}`;
         }
       }catch(e){
-        lastErr=e.message;
+        lastErr=e.message||'Network error';
       }
     }
   }
-  throw new Error(lastErr||'API Key or Network issue');
+  throw new Error(lastErr);
 }
 
-async function callGeminiApi(userPrompt,jsonSchema=null){
-  const systemPrompt=buildSystemInstruction();
-  const userParts=[{text:userPrompt}];
-  if(aiState.inlinePdfBase64){
-    userParts.push({
-      inlineData:{
-        mimeType:"application/pdf",
-        data:aiState.inlinePdfBase64
-      }
-    });
-  }
+function buildCourseSystemPrompt(){
+  const catalogue=coursesData.map(c=>`${c.code} (${c.title}): ${c.files.map(f=>f.name).join(', ')}`).join('\n');
+  let sys=`You are the friendly, expert Gemini AI Study Assistant for Section 68_F, Department of CSE, Daffodil International University (DIU), Fall 2026 portal built by Parves Hasan.
+Help students understand their lecture PDFs, PowerPoint (PPTX) slides, reference books, and prepare for Mid/Final exams and quizzes.
+Respond clearly in the language the student uses (English, Bangla, or Banglish). Use structured bullet points, examples, and step-by-step explanations.
 
-  const contents=jsonSchema
-    ? [{role:"user",parts:userParts}]
-    : [...aiState.history.slice(-6),{role:"user",parts:userParts}];
+Available Courses & Indexed Materials in 68_F Portal:
+${catalogue}`;
 
-  const payload={
-    contents,
-    systemInstruction:{parts:[{text:systemPrompt}]}
-  };
-  if(jsonSchema){
-    payload.generationConfig={
-      responseMimeType:"application/json",
-      responseSchema:jsonSchema
-    };
+  if(aiState.activeFile){
+    sys+=`\n\nCurrently Selected Document:
+Title: ${aiState.activeFile.name}
+Course: ${aiState.activeFile.course}
+Category: ${aiState.activeFile.category} (${aiState.activeFile.type})`;
   }
-
-  const text=await callGeminiRaw(payload);
-  if(!jsonSchema){
-    aiState.history.push({role:"user",parts:[{text:userPrompt}]});
-    aiState.history.push({role:"model",parts:[{text}]});
+  if(aiState.extractedText){
+    sys+=`\n\nExtracted Document Content (use this directly to answer questions and create quizzes):\n"""\n${aiState.extractedText}\n"""`;
   }
-  return text;
+  return sys;
 }
 
-function showConnectionHelp(errMsg){
-  return `⚠️ **API Key সংযোগ নোট:** Gemini API থেকে উত্তর আনা যায়নি (${esc(errMsg)})।
-
-**সমাধান (মাত্র ৩০ সেকেন্ড):**
-১. আপনি যেহেতু **GitHub Pages**-এ সাইটটি চালাচ্ছেন, তাই Google AI Studio থেকে`+' `AIzaSy...` '+`দিয়ে শুরু হওয়া একটি স্ট্যান্ডার্ড API Key নিন: [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
-২. উপরের ডানপাশের **🔑 API Key** বাটনে ক্লিক করে Key-টি পেস্ট করে **Save Key** চাপুন!`;
-}
-
-async function handleAiPrompt(promptText){
-  const text=promptText.trim();
-  if(!text||aiState.busy)return;
-  aiState.busy=true;
-  $('aiSendBtn').disabled=true;
-  appendAiMessage('user',text);
-  const loaderEl=appendAiMessage('model','<div class="ai-typing"><span></span><span></span><span></span></div>',true);
-
-  try{
-    const reply=await callGeminiApi(text);
-    loaderEl.querySelector('.ai-bubble').innerHTML=formatAiMarkdown(reply);
-  }catch(e){
-    loaderEl.querySelector('.ai-bubble').innerHTML=formatAiMarkdown(showConnectionHelp(e.message));
-  }finally{
-    aiState.busy=false;
-    $('aiSendBtn').disabled=false;
-    $('aiMsgs').scrollTop=$('aiMsgs').scrollHeight;
-  }
-}
-
-// Interactive MCQ Quiz Generator
-$('btnGenMcq').onclick=async()=>{
+async function generateExamPractice(mode){
   if(aiState.busy)return;
   aiState.busy=true;
-  const targetName=aiState.activeFile?`${aiState.activeFile.name} (${aiState.activeFile.course})`:(state.course==='all'?'DIU CSE 68_F Courses (CSE223, CSE225, CSE227, CSE228)':state.course);
-  appendAiMessage('user',`🎯 Generate an Interactive MCQ Practice Quiz on: ${targetName}`);
-  const loaderEl=appendAiMessage('model','<div class="ai-typing"><span></span><span></span><span></span></div>',true);
+  const topicName=aiState.activeFile?`${aiState.activeFile.name} (${aiState.activeFile.course})`:(state.course!=='all'?state.course:'DIU CSE 68_F Courses');
+  appendAiMsg('user',mode==='mcq'?`🎯 Generate an Interactive MCQ Quiz on: ${topicName}`:`📝 Generate Mid/Final Written Exam Questions & Model Answers on: ${topicName}`);
 
-  const schema={
-    type:"ARRAY",
-    items:{
-      type:"OBJECT",
-      properties:{
-        question:{type:"STRING"},
-        options:{type:"ARRAY",items:{type:"STRING"}},
-        correctIndex:{type:"INTEGER"},
-        explanation:{type:"STRING"}
-      },
-      required:["question","options","correctIndex","explanation"]
-    }
-  };
+  const loader=document.createElement('div');
+  loader.className='ai-msg bot';
+  loader.innerHTML=`<div class="ai-av"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div class="ai-bub"><span class="ai-typing"><i></i><i></i><i></i></span> Preparing ${mode==='mcq'?'interactive MCQ quiz':'Mid/Final written questions'}...</div>`;
+  $('aiMsgs').appendChild(loader);
+  $('aiMsgs').scrollTop=$('aiMsgs').scrollHeight;
 
-  const prompt=`Generate 5 high-probability university exam Multiple Choice Questions (MCQs) based on the active document/slides (${targetName}). Make sure each question has exactly 4 options, 1 correctIndex (0 to 3), and a clear explanation in easy Bangla & English.`;
+  const prompt=mode==='mcq'
+    ?`Create 4 high-yield university exam Multiple Choice Questions (MCQs) based on the active document/course (${topicName}).
+Return ONLY valid JSON array (no markdown fences) in this exact format:
+[{"q":"Question text?","options":["A) ...","B) ...","C) ...","D) ..."],"ans":0,"exp":"Clear explanation in English + easy Bangla"}]`
+    :`Create 3 important DIU Mid/Final Exam standard Written Questions (with Marks allocation like [5 Marks]) based on (${topicName}).
+Return ONLY valid JSON array (no markdown fences) in this exact format:
+[{"q":"1. Written question text [5 Marks]","ans":"Step-by-step model answer with key points and easy Bangla explanation"}]`;
 
   try{
-    const rawJson=await callGeminiApi(prompt,schema);
-    const quizData=JSON.parse(rawJson);
-    renderInteractiveQuiz(loaderEl.querySelector('.ai-bubble'),quizData,targetName);
-  }catch(e){
-    loaderEl.querySelector('.ai-bubble').innerHTML=formatAiMarkdown(showConnectionHelp(e.message));
+    const raw=await callGeminiWithFallback({
+      systemInstruction:{parts:[{text:buildCourseSystemPrompt()}]},
+      contents:[{role:'user',parts:[{text:prompt}]}]
+    });
+    loader.remove();
+    const clean=raw.replace(/```json|```/g,'').trim();
+    const sIdx=clean.indexOf('['),eIdx=clean.lastIndexOf(']');
+    if(sIdx===-1||eIdx===-1)throw new Error('Format fallback');
+    const items=JSON.parse(clean.slice(sIdx,eIdx+1));
+
+    if(mode==='mcq'){
+      const html=`<b>🎯 Interactive Practice Quiz · ${esc(topicName)}</b><p>যেকোনো অপশনে ক্লিক করে সাথে সাথে সঠিক উত্তর ও ব্যাখ্যা দেখে নিন:</p>`+
+        items.map((it,idx)=>`<div class="qcard" data-ans="${it.ans}"><b class="qtitle">Q${idx+1}. ${esc(it.q)}</b><div class="qopts">${(it.options||[]).map((op,oi)=>`<button type="button" class="qopt" data-oi="${oi}">${esc(op)}</button>`).join('')}</div><div class="qexp">💡 <b>ব্যাখ্যা:</b> ${esc(it.exp||'')}</div></div>`).join('');
+      const msgEl=appendAiMsg('bot',html,true);
+      msgEl.querySelectorAll('.qcard').forEach(card=>{
+        const ans=+card.dataset.ans;
+        const opts=card.querySelectorAll('.qopt');
+        const exp=card.querySelector('.qexp');
+        opts.forEach(btn=>{
+          btn.onclick=()=>{
+            const pick=+btn.dataset.oi;
+            opts.forEach((b,i)=>{
+              b.disabled=true;
+              if(i===ans)b.classList.add('correct');
+              else if(i===pick)b.classList.add('wrong');
+            });
+            exp.classList.add('show');
+          };
+        });
+      });
+    }else{
+      const html=`<b>📝 Mid / Final Written Questions · ${esc(topicName)}</b><p>নিজে আগে উত্তর চিন্তা করুন, এরপর <b>Show Model Answer</b> বাটনে ক্লিক করুন:</p>`+
+        items.map((it,idx)=>`<div class="qcard"><b class="qtitle">${esc(it.q)}</b><button type="button" class="btn sm wans-btn"><i class="fa-solid fa-eye"></i> Show Model Answer</button><div class="qexp">${formatAiMarkdown(it.ans||'')}</div></div>`).join('');
+      const msgEl=appendAiMsg('bot',html,true);
+      msgEl.querySelectorAll('.wans-btn').forEach(btn=>{
+        btn.onclick=()=>{
+          const exp=btn.nextElementSibling;
+          const open=exp.classList.toggle('show');
+          btn.innerHTML=`<i class="fa-solid fa-${open?'eye-slash':'eye'}"></i> ${open?'Hide Answer':'Show Model Answer'}`;
+        };
+      });
+    }
+  }catch(err){
+    loader.remove();
+    $('aiKeyBar').classList.add('show');
+    appendAiMsg('bot',`⚠️ **API Key সংযোগ নোট:** (${err.message})\n\n**সমাধান:** উপরের ডানপাশের **🔑 API Key** বক্সে আপনার Google AI Studio-র কী-টি পেস্ট করে **Save Key** চাপুন!`);
   }finally{
     aiState.busy=false;
-    $('aiMsgs').scrollTop=$('aiMsgs').scrollHeight;
   }
-};
-
-function renderInteractiveQuiz(container,questions,title){
-  let score=0,answered=0;
-  const uid='qz_'+Date.now();
-  let html=`<div class="quiz-box" id="${uid}">
-    <div class="quiz-top">
-      <span><i class="fa-solid fa-bullseye" style="color:var(--accent)"></i> Practice Quiz · ${esc(title)}</span>
-      <span id="${uid}_sc">Score: 0 / ${questions.length}</span>
-    </div>`;
-
-  questions.forEach((q,qi)=>{
-    html+=`<div class="quiz-qcard" data-qi="${qi}">
-      <div class="quiz-qtitle">${qi+1}. ${esc(q.question)}</div>
-      <div class="quiz-opts">
-        ${(q.options||[]).map((opt,oi)=>`<button type="button" class="quiz-opt" data-qi="${qi}" data-oi="${oi}" data-ci="${q.correctIndex}"><b>${String.fromCharCode(65+oi)}.</b> <span>${esc(opt)}</span></button>`).join('')}
-      </div>
-      <div class="quiz-exp" id="${uid}_exp_${qi}"><b>💡 ব্যাখ্যা:</b> ${esc(q.explanation)}</div>
-    </div>`;
-  });
-  html+=`</div>`;
-  container.innerHTML=html;
-
-  const box=document.getElementById(uid);
-  box.onclick=e=>{
-    const btn=e.target.closest('.quiz-opt');
-    if(!btn||btn.disabled)return;
-    const qi=+btn.dataset.qi,oi=+btn.dataset.oi,ci=+btn.dataset.ci;
-    const card=btn.closest('.quiz-qcard');
-    card.querySelectorAll('.quiz-opt').forEach((b,idx)=>{
-      b.disabled=true;
-      if(idx===ci)b.classList.add('correct');
-      else if(idx===oi)b.classList.add('wrong');
-    });
-    answered++;
-    if(oi===ci)score++;
-    document.getElementById(`${uid}_sc`).textContent=`Score: ${score} / ${questions.length}`;
-    const expEl=document.getElementById(`${uid}_exp_${qi}`);
-    if(expEl)expEl.classList.add('show');
-  };
 }
 
-// Interactive Mid/Final Written Exam Practice Generator
-$('btnGenWritten').onclick=async()=>{
-  if(aiState.busy)return;
+async function askGemini(userText){
+  if(!userText.trim()||aiState.busy)return;
   aiState.busy=true;
-  const targetName=aiState.activeFile?`${aiState.activeFile.name} (${aiState.activeFile.course})`:(state.course==='all'?'DIU CSE 68_F Courses':state.course);
-  appendAiMessage('user',`📝 Generate Mid/Final Written Exam Questions & Model Answers on: ${targetName}`);
-  const loaderEl=appendAiMessage('model','<div class="ai-typing"><span></span><span></span><span></span></div>',true);
+  appendAiMsg('user',userText);
+  $('aiInput').value='';
 
-  const schema={
-    type:"ARRAY",
-    items:{
-      type:"OBJECT",
-      properties:{
-        question:{type:"STRING"},
-        marks:{type:"STRING"},
-        answer:{type:"STRING"}
-      },
-      required:["question","marks","answer"]
-    }
-  };
+  const loader=document.createElement('div');
+  loader.className='ai-msg bot';
+  loader.innerHTML=`<div class="ai-av"><i class="fa-solid fa-wand-magic-sparkles"></i></div><div class="ai-bub"><span class="ai-typing"><i></i><i></i><i></i></span> Thinking...</div>`;
+  $('aiMsgs').appendChild(loader);
+  $('aiMsgs').scrollTop=$('aiMsgs').scrollHeight;
 
-  const prompt=`Generate 4 important DIU Mid/Final exam standard written/analytical questions with marks allocation (e.g., "5 Marks") and step-by-step model answers (in clear English + Bangla explanation) based on ${targetName}.`;
+  aiState.history.push({role:'user',parts:[{text:userText}]});
 
   try{
-    const rawJson=await callGeminiApi(prompt,schema);
-    const list=JSON.parse(rawJson);
-    const uid='wr_'+Date.now();
-    let html=`<div class="quiz-box" id="${uid}">
-      <div class="quiz-top"><span><i class="fa-solid fa-pen-clip" style="color:var(--accent)"></i> Mid / Final Written Exam Practice</span><span>${list.length} Questions</span></div>`;
-    list.forEach((item,idx)=>{
-      html+=`<div class="quiz-qcard">
-        <div class="quiz-qtitle">Q${idx+1}. ${esc(item.question)} <span class="tag" style="margin-left:6px">${esc(item.marks)}</span></div>
-        <button type="button" class="btn sm" data-toggle="${uid}_ans_${idx}"><i class="fa-regular fa-eye"></i> Show Model Answer</button>
-        <div class="written-ans" id="${uid}_ans_${idx}">${formatAiMarkdown(item.answer)}</div>
-      </div>`;
+    const ans=await callGeminiWithFallback({
+      systemInstruction:{parts:[{text:buildCourseSystemPrompt()}]},
+      contents:aiState.history.slice(-10)
     });
-    html+=`</div>`;
-    const bubble=loaderEl.querySelector('.ai-bubble');
-    bubble.innerHTML=html;
-    bubble.onclick=e=>{
-      const b=e.target.closest('[data-toggle]');
-      if(!b)return;
-      const ans=document.getElementById(b.dataset.toggle);
-      if(ans){
-        const open=ans.classList.toggle('show');
-        b.innerHTML=open?`<i class="fa-regular fa-eye-slash"></i> Hide Model Answer`:`<i class="fa-regular fa-eye"></i> Show Model Answer`;
-      }
-    };
-  }catch(e){
-    loaderEl.querySelector('.ai-bubble').innerHTML=formatAiMarkdown(showConnectionHelp(e.message));
+    loader.remove();
+    aiState.history.push({role:'model',parts:[{text:ans}]});
+    appendAiMsg('bot',ans);
+  }catch(err){
+    loader.remove();
+    aiState.history.pop();
+    $('aiKeyBar').classList.add('show');
+    appendAiMsg('bot',`⚠️ **API Key সংযোগ নোট:** (${err.message})\n\n**সমাধান:** উপরের ডানপাশের **🔑 API Key** বক্সে আপনার কী-টি পেস্ট করে **Save Key** চাপুন!`);
   }finally{
     aiState.busy=false;
-    $('aiMsgs').scrollTop=$('aiMsgs').scrollHeight;
   }
-};
+}
 
 $('aiForm').onsubmit=e=>{
   e.preventDefault();
-  const val=$('aiInput').value;
-  $('aiInput').value='';
-  handleAiPrompt(val);
+  askGemini($('aiInput').value);
 };
-
 $('aiInput').addEventListener('keydown',e=>{
   if(e.key==='Enter'&&!e.shiftKey){
     e.preventDefault();
-    $('aiForm').requestSubmit();
+    askGemini($('aiInput').value);
   }
 });
-
-$('aiQuickPrompts').onclick=e=>{
-  const chip=e.target.closest('[data-prompt]');
-  if(!chip)return;
-  handleAiPrompt(chip.dataset.prompt);
+$('aiPrompts').onclick=e=>{
+  const qz=e.target.closest('[data-quiz]');
+  if(qz){generateExamPractice(qz.dataset.quiz);return}
+  const b=e.target.closest('[data-p]');
+  if(b)askGemini(b.dataset.p);
 };
 
+document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card,.ov button');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+fetch('https://parveshasan.goatcounter.com/counter//TOTAL.json').then(r=>r.ok?r.json():Promise.reject()).then(j=>{$('visits').textContent='· '+j.count+' visits'}).catch(()=>{});
 (function(){
   const cv=$('net'),cx=cv.getContext('2d'),root=document.documentElement;
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
