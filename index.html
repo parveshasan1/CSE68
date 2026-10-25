@@ -134,6 +134,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 .sp-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;padding:.7rem 1rem;border-bottom:1px solid var(--line)}
 .sp-head b{display:flex;align-items:center;gap:9px}
 .subnote{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 .9rem;font-size:.9rem}.subnote span{color:var(--muted)}.subnote .btn:first-of-type{margin-left:auto}
+.subs.kids{margin-top:-.3rem;padding-left:1rem;border-left:2px solid var(--line)}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.crumb{border:0;background:none;color:var(--muted);font:600 .88rem 'Inter',sans-serif;cursor:pointer;padding:2px 4px;border-radius:6px}.crumb:hover{color:var(--accent)}.crumb.now{color:var(--text)}.crumb-sep{font-size:.6rem;color:var(--muted)}
 .plist{max-height:420px;overflow:auto}
 .prow{display:flex;align-items:center;gap:12px;padding:.65rem 1rem;border-bottom:1px solid var(--line)}
 .prow:last-child{border-bottom:0}
@@ -268,11 +270,11 @@ footer{margin-top:5rem;background:linear-gradient(180deg,transparent,color-mix(i
 const folderMap={
 all:[["Main Root Folder (All Courses)","1kAVmMEKiiwi4JldUaAUIsykXA4IkzT9A"],["CSE223 Folder","1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ"],["CSE225 Folder","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["CSE227 Folder","1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq"],["CSE228 Folder","19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK"],["CSE224 Lab Folder","1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO"]],
 CSE223:[["CSE223 Main","1LEEIpcUQ7ooH39qXo867r5Z94jy736BJ"],["Mid Term","1POdeQlm16Rbqh5PHXAQaDRmd_mb0El1i"],["Final Term","1T64gFJERrzUlWUoLtkrnAHBwbRm0TSei"],["Quiz Questions","11FdWi-vlznmkvojBtg7SDksbcrviG4VC"],["Ex Mid Questions","1mMqV43gB4PGZKlwYXDiwyzWAxuLsdCue"]],
-CSE225:[["CSE225 Main","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["Mid Term","1GsYzrj3RdJCo_mgPgkCSu-0y3hZ4QbGI"],["Week 1","18GZP4IzqGUC9kGm7hN571v-vcBlP_eke"],["Week 2","1eyOOeYHdhz3NtueguHKLuA8OCfHXw22p"],["Week 3","14Km5LyrskpfDnD5KrBiC1ND_QFrLJ6qi"],["Week 4","1wZAjOKNANTTrgRKmNKZ7W_f0BTCpAzxJ"],["Final Term","1bjRSBAZnp7YNJwenXcGiRIMAgqGEYKIE"],["Reference Books","1MG0G88nbKQkDnFRbZ9dpX-OtJYKr1uvQ"],["Ex Mid Questions","1bGznroKUgxXhKb6HxwFzoaJTlCUOaJ58"]],
+CSE225:[["CSE225 Main","14J1dlQIJEpk1yME3IO0yZtj7cJ_NTA-I"],["Mid Term","1GsYzrj3RdJCo_mgPgkCSu-0y3hZ4QbGI"],["Week 1","18GZP4IzqGUC9kGm7hN571v-vcBlP_eke","Mid Term"],["Week 2","1eyOOeYHdhz3NtueguHKLuA8OCfHXw22p","Mid Term"],["Week 3","14Km5LyrskpfDnD5KrBiC1ND_QFrLJ6qi","Mid Term"],["Week 4","1wZAjOKNANTTrgRKmNKZ7W_f0BTCpAzxJ","Mid Term"],["Final Term","1bjRSBAZnp7YNJwenXcGiRIMAgqGEYKIE"],["Reference Books","1MG0G88nbKQkDnFRbZ9dpX-OtJYKr1uvQ"],["Ex Mid Questions","1bGznroKUgxXhKb6HxwFzoaJTlCUOaJ58"]],
 CSE227:[["CSE227 Main","1KJxT00rbSiZcoGAojW1z4q5sPKtshuYq"],["Mid Term","16vwwH4ki1Gp9ypXiqS7huw_5PMbidb3d"],["Final Term","19ofes9iGEBusEYCVt1Ho6vXdS3r_dgBd"],["Practice PDF","1DnD_X16QhQuTLacRNOIg4fMIKRRYzkz1"],["Quiz Questions","1vu177W6ZPIciIJvGaj2ACePmpDOOs0H4"],["Ex Mid Questions","1iMlwkpePjXhAY5apjgRxwskFiQe977wi"]],
 CSE228:[["CSE228 Main","19bSczGw7VGrMzG7sR6hADIeJm9lOAtVK"],["Mid Term","1FRlUQBgEu0wCKmNXXCI7irUBn7sY9GvU"],["Final Term","1r7YNdBXaLzeK1t6P8vya4gNIANJZARS7"],["Reference Books","1GFYzvsjLk9CfZJa3dfLDjVFmV0QVcVl5"],["Ex Mid Questions","118j4-Z8cByfQBFNt4G7-HmwKUJPFpbK0"]],
 CSE224:[["CSE224 Lab Folder","1Wa3KfVA_M_RxmWA5RTSuzbiH7KwU5XQO"]]};
-for(const k in folderMap)folderMap[k]=folderMap[k].map(([label,id])=>({label,id}));
+for(const k in folderMap)folderMap[k]=folderMap[k].map(([label,id,parent])=>({label,id,parent}));
 const IC={pdf:"fa-file-pdf icon-pdf",ppt:"fa-file-powerpoint icon-ppt",book:"fa-book icon-book",prac:"fa-pen-to-square icon-ques",lab:"fa-book-open icon-book"};
 const F=(name,category,type,ic,id)=>({name,category,type,icon:IC[ic],url:"https://drive.google.com/file/d/"+id+"/view"});
 const coursesData=[
@@ -318,7 +320,7 @@ const zipGo=id=>{const fr=document.createElement('iframe');fr.style.display='non
 // AUTO-SYNC: paste a Google Drive API key to read folders and files live from Drive (add/delete/rename updates the page by itself).
 const DRIVE_API_KEY="AIzaSyAvO28NMn5eW9-w1pLoNEe519Rad-zRy7I";
 const fmatch=(f,l)=>f.path?f.path.includes(l):f.category===l||f.name.startsWith(l)||(l==="Reference Books"&&f.category==="Book")||(l==="Practice PDF"&&f.category==="Practice");
-const state={sub:{},course:'all',type:'all',q:'',view:'list',sort:'def',layout:'cards',folder:folderMap.all[0].id};
+const state={nav:{},sub:{},course:'all',type:'all',q:'',view:'list',sort:'def',layout:'cards',folder:folderMap.all[0].id};
 const kindOf=f=>{const c=f.icon.split(' ')[1]||'';return c.replace('icon-','')};
 const typeOf=f=>/book/i.test(f.category)||/book/i.test((f.path||[]).join(' '))||(!f.path&&/book/.test(f.icon))?'Books':/PPT/.test(f.type)?'Slides':/Practice|Quiz|Ques/i.test(f.category)?'Practice':'Documents';
 let allFiles,types;
@@ -366,23 +368,38 @@ function setPanel(open){$('drive').classList.toggle('closed',!open);$('collapse'
 $('collapse').onclick=()=>setPanel($('drive').classList.contains('closed'));
 document.querySelectorAll('a[href="#drive"]').forEach(a=>a.addEventListener('click',()=>setPanel(true)));
 
+const countF=n=>n.files.length+n.folders.reduce((s,x)=>s+countF(x),0);
+const collect=n=>n.files.concat(...n.folders.map(collect));
+const findNode=(n,id)=>{if(n.id===id)return n;for(const x of n.folders){const r=findNode(x,id);if(r)return r}return null};
+function treeHTML(c,cur,nav){
+  let crumbs=`<button class="crumb" data-up="${c.code}|0">${esc(c.title)}</button>`,n=c.tree;
+  nav.forEach((id,i)=>{n=n.folders.find(x=>x.id===id);crumbs+=`<i class="fa-solid fa-chevron-right crumb-sep"></i><button class="crumb${i===nav.length-1?' now':''}" data-up="${c.code}|${i+1}">${esc(n.name)}</button>`});
+  const bar=nav.length?`<div class="subnote"><div class="crumbs">${crumbs}</div><a class="btn sm" href="https://drive.google.com/drive/folders/${cur.id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a></div>`:'';
+  const tiles=cur.folders.length?`<div class="subs">`+cur.folders.map(f=>`<span class="subw"><button class="sub" data-nav="${c.code}|${f.id}"><i class="fa-solid fa-folder"></i>${esc(f.name)} <em>${countF(f)}</em></button><button class="subd" data-dlt="${c.code}|${f.id}" aria-label="Download ${esc(f.name)}" title="Download all files in this folder"><i class="fa-solid fa-download"></i></button></span>`).join('')+`</div>`:'';
+  return bar+tiles;
+}
 function subsHTML(c,q){
   if(q||state.type!=='all')return'';
-  const l=folderMap[c.code]||[],subs=l.length>1?l.slice(1):l;
-  if(!subs.length)return'';
-  return`<div class="subs" aria-label="${c.code} folders">`+subs.map(s=>{const n=c.files.filter(f=>fmatch(f,s.label)).length;
-    return`<span class="subw${state.sub[c.code]===s.label?' on':''}"><button class="sub" data-fo="${s.id}" data-l="${esc(s.label)}" data-code="${c.code}" aria-pressed="${state.sub[c.code]===s.label}"><i class="fa-solid fa-folder"></i>${esc(s.label)}${n?` <em>${n}</em>`:''}</button><button class="subd" data-dlf="${c.code}|${esc(s.label)}" aria-label="Download ${esc(s.label)}" title="Download files in this folder"><i class="fa-solid fa-download"></i></button></span>`}).join('')+`</div>`;
+  const l=folderMap[c.code]||[],all=l.length>1?l.slice(1):l;
+  if(!all.length)return'';
+  const sel=state.sub[c.code]||'',si=all.find(s=>s.label===sel),pl=si?(si.parent||si.label):'';
+  const kids=pl?all.filter(s=>s.parent===pl):[];
+  const tile=s=>{const n=c.files.filter(f=>fmatch(f,s.label)).length,on=sel===s.label;
+    return`<span class="subw${on?' on':''}"><button class="sub" data-fo="${s.id}" data-l="${esc(s.label)}" data-code="${c.code}" aria-pressed="${on}"><i class="fa-solid fa-folder"></i>${esc(s.label)}${n?` <em>${n}</em>`:''}</button><button class="subd" data-dlf="${c.code}|${esc(s.label)}" aria-label="Download ${esc(s.label)}" title="Download files in this folder"><i class="fa-solid fa-download"></i></button></span>`};
+  return`<div class="subs" aria-label="${c.code} folders">${all.filter(s=>!s.parent).map(tile).join('')}</div>`+(kids.length?`<div class="subs kids" aria-label="Inside ${esc(pl)}">${kids.map(tile).join('')}</div>`:'');
 }
 function render(){
   const q=state.q.trim(),ql=q.toLowerCase();let html='',total=0;
   coursesData.forEach(c=>{
     if(state.course!=='all'&&c.code!==state.course)return;
     let files=c.files.filter(f=>(state.type==='all'||typeOf(f)===state.type)&&(!ql||[f.name,f.category,c.title,c.code].some(s=>s.toLowerCase().includes(ql))));
-    const sl=(!ql&&state.type==='all')?state.sub[c.code]:'';if(sl)files=files.filter(f=>fmatch(f,sl));
+    const tree=!!c.tree&&!ql&&state.type==='all';let cur=null,nav=[];
+    if(tree){cur=c.tree;const ok=[];for(const id of (state.nav[c.code]||[])){const n=cur.folders.find(x=>x.id===id);if(!n)break;cur=n;ok.push(id)}state.nav[c.code]=nav=ok;files=cur.files.slice()}
+    const sl=(!ql&&state.type==='all'&&!c.tree)?state.sub[c.code]:'';if(sl)files=files.filter(f=>fmatch(f,sl));
     if(state.sort==='az')files.sort((a,b)=>a.name.localeCompare(b.name));
-    if(!files.length&&!sl)return;total+=files.length+(sl?1:0);
-    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download this whole course"><i class="fa-solid ${zipId(c.code)?'fa-file-zipper':'fa-download'}"></i> <span class="hide-sm">${zipId(c.code)?'Download ZIP':'Download course'}</span></button></div>${subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
-    files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
+    if(!files.length&&!sl&&!tree)return;total+=files.length+(sl||tree?1:0);
+    html+=`<section class="section"><div class="sec-head"><div class="sec-icon"><i class="fa-solid ${c.icon}"></i></div><div><h2>${esc(c.title)}</h2><small>${files.length} file${files.length>1?'s':''}</small></div><span class="code">${c.code}</span><button class="btn sm" data-dlc="${c.code}" title="Download this whole course"><i class="fa-solid ${zipId(c.code)?'fa-file-zipper':'fa-download'}"></i> <span class="hide-sm">${zipId(c.code)?'Download ZIP':'Download course'}</span></button></div>${tree?treeHTML(c,cur,nav):subsHTML(c,q)}${sl?`<div class="subnote"><b>${esc(sl)}</b> <span>${files.length} file${files.length===1?'':'s'}</span><a class="btn sm" href="https://drive.google.com/drive/folders/${(folderMap[c.code].find(x=>x.label===sl)||{}).id}" target="_blank" rel="noopener"><i class="fa-brands fa-google-drive"></i> Open in Drive</a><button class="btn sm" data-clr="${c.code}">Show all ${esc(c.title)} files</button></div>`:''}<div class="grid${state.layout==='list'?' list':''}">`+
+    files.map(f=>`<article class="card ${kindOf(f)}"><div class="top"><div class="ficon"><i class="fa-solid ${f.icon.split(' ')[0]}"></i></div><div><h3>${hi(f.name,q)}</h3><span class="tag">${hi(f.category,q)}</span></div></div><div class="foot"><span class="ftype">${f.type}</span><div class="row"><button class="btn sm icon" data-dl="${esc(f.url)}" aria-label="Download ${esc(f.name)}" title="Download"><i class="fa-solid fa-download"></i></button><button class="btn sm icon" data-copy="${esc(f.url)}" aria-label="Copy link to ${esc(f.name)}" title="Copy link"><i class="fa-regular fa-copy"></i></button><a class="btn sm primary" href="${esc(f.url)}" target="_blank" rel="noopener">Open <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></article>`).join('')+(files.length?'':tree?(cur.folders.length?'':'<div class="pl-empty" style="grid-column:1/-1">This folder is empty.</div>'):`<div class="pl-empty" style="grid-column:1/-1">No files from ${esc(sl)} are listed here yet. Open this folder in Drive to see what is inside.</div>`)+`</div></section>`;
   });
   $('count').textContent=total+(total===1?' file':' files');
   $('out').innerHTML=total?html:`<div class="empty"><i class="fa-regular fa-folder-open"></i><b>No files match${q?` “${esc(q)}”`:''}</b>Try a shorter keyword, or clear the filters.<br><br><button class="btn" id="reset">Clear filters</button></div>`;
@@ -402,8 +419,14 @@ $('dlAll').onclick=()=>zipId('all')?zipGo(zipId('all')):dl(allFiles,'68_F Study 
 if(zipId('all'))$('dlAll').innerHTML='<i class="fa-solid fa-file-zipper"></i> Download ZIP';
 $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
 $('out').onclick=e=>{
+  const nv=e.target.closest('[data-nav]');
+  if(nv){const [code,id]=nv.dataset.nav.split('|');(state.nav[code]=state.nav[code]||[]).push(id);render();return}
+  const up=e.target.closest('[data-up]');
+  if(up){const [code,k]=up.dataset.up.split('|');state.nav[code]=(state.nav[code]||[]).slice(0,+k);render();return}
+  const dt=e.target.closest('[data-dlt]');
+  if(dt){const [code,id]=dt.dataset.dlt.split('|'),c=coursesData.find(x=>x.code===code),nd=findNode(c.tree,id);dl(collect(nd),nd.name);return}
   const fo=e.target.closest('[data-fo]');
-  if(fo){const c=fo.dataset.code,l=fo.dataset.l;state.sub[c]=state.sub[c]===l?'':l;render();return}
+  if(fo){const c=fo.dataset.code,l=fo.dataset.l,it=(folderMap[c]||[]).find(x=>x.label===l);state.sub[c]=state.sub[c]===l?((it&&it.parent)||''):l;render();return}
   const cl=e.target.closest('[data-clr]');
   if(cl){state.sub[cl.dataset.clr]='';render();return}
   const df=e.target.closest('[data-dlf]');
@@ -436,28 +459,29 @@ async function driveList(id){let out=[],tok='';
     if(!r.ok)throw new Error('Drive '+r.status);const j=await r.json();out=out.concat(j.files||[]);tok=j.nextPageToken||''}while(tok);
   return out}
 const ICONS={pdf:'fa-file-pdf icon-pdf',ppt:'fa-file-powerpoint icon-ppt',pptx:'fa-file-powerpoint icon-ppt',doc:'fa-file-word icon-book',docx:'fa-file-word icon-book',xls:'fa-file-excel icon-book',xlsx:'fa-file-excel icon-book',zip:'fa-file-zipper icon-ques',rar:'fa-file-zipper icon-ques',png:'fa-file-image icon-ques',jpg:'fa-file-image icon-ques',jpeg:'fa-file-image icon-ques'};
-async function walk(id,path,files,folders){
+async function walk(id,path,files,folders,node){
   const items=await driveList(id);
   await Promise.all(items.map(async it=>{
-    if(it.mimeType===FOLDER){if(path.length<4){const p=[...path,it.name];folders.push({label:it.name,id:it.id,key:p.join('/')});await walk(it.id,p,files,folders)}}
+    if(it.mimeType===FOLDER){if(path.length<4){const p=[...path,it.name],ch={id:it.id,name:it.name,folders:[],files:[]};node.folders.push(ch);folders.push({label:it.name,id:it.id,key:p.join('/')});await walk(it.id,p,files,folders,ch)}}
     else{const ext=(it.name.includes('.')?it.name.split('.').pop():'file').toLowerCase();
-      files.push({name:it.name.replace(/\.[A-Za-z0-9]{2,5}$/,''),category:path[0]||'Files',path,type:ext.toUpperCase(),icon:ICONS[ext]||'fa-file icon-ques',url:'https://drive.google.com/file/d/'+it.id+'/view'})}
+      const fo={name:it.name.replace(/\.[A-Za-z0-9]{2,5}$/,''),category:path[0]||'Files',path,type:ext.toUpperCase(),icon:ICONS[ext]||'fa-file icon-ques',url:'https://drive.google.com/file/d/'+it.id+'/view'};files.push(fo);node.files.push(fo)}
   }))}
+function sortTree(n){n.folders.sort((a,b)=>natural(a.name,b.name));n.files.sort((a,b)=>natural(a.name,b.name));n.folders.forEach(sortTree)}
 async function syncDrive(force){
   const badge=$('liveTxt');badge.textContent='Syncing with Drive...';
   let cache=null;try{cache=JSON.parse(sessionStorage.getItem('drive68f')||'null')}catch(e){}
   if(!force&&cache&&Date.now()-cache.t<300000){applyDrive(cache.data);badge.textContent='Live from Google Drive';return}
   try{
     const data={};
-    await Promise.all(coursesData.map(async c=>{const files=[],folders=[];await walk(folderMap[c.code][0].id,[],files,folders);
-      files.sort((a,b)=>natural(a.path.join('/')+'/'+a.name,b.path.join('/')+'/'+b.name));folders.sort((a,b)=>natural(a.key,b.key));data[c.code]={files,folders}}));
+    await Promise.all(coursesData.map(async c=>{const files=[],folders=[],tree={id:folderMap[c.code][0].id,name:c.title,folders:[],files:[]};await walk(folderMap[c.code][0].id,[],files,folders,tree);sortTree(tree);
+      files.sort((a,b)=>natural(a.path.join('/')+'/'+a.name,b.path.join('/')+'/'+b.name));folders.sort((a,b)=>natural(a.key,b.key));data[c.code]={files,folders,tree}}));
     try{sessionStorage.setItem('drive68f',JSON.stringify({t:Date.now(),data}))}catch(e){}
     applyDrive(data);badge.textContent='Live from Google Drive';if(force)toast('Updated from Drive');
   }catch(e){badge.textContent='Showing saved list';toast('Could not reach Drive, showing saved list')}
 }
 function applyDrive(data){
-  coursesData.forEach(c=>{const d=data[c.code];if(!d)return;c.files=d.files;folderMap[c.code]=[folderMap[c.code][0],...d.folders.map(f=>({label:f.label,id:f.id}))]});
-  refreshIndex();state.sub={};
+  coursesData.forEach(c=>{const d=data[c.code];if(!d)return;c.files=d.files;c.tree=d.tree;folderMap[c.code]=[folderMap[c.code][0],...d.folders.map(f=>({label:f.label,id:f.id}))]});
+  refreshIndex();state.sub={};state.nav={};
   $('typeSel').innerHTML=types.map(x=>`<option value="${x}">${x==='all'?'All types':x}</option>`).join('');
   buildOverview();buildStats();buildRails();buildFolders();render();
   $('featMeta').textContent=`${allFiles.length} files across ${coursesData.length} courses`;
